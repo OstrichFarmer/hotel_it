@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/views/auth/auth_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_password_textfield.dart';
 import 'package:hotel_it/widgets/custom_textField.dart';
 import 'package:stacked/stacked.dart';
 
@@ -125,6 +126,11 @@ class AuthView extends StatelessWidget {
                                                   const CustomTextField(
                                                     title: "Username",
                                                   ),
+                                                  SizedBox(
+                                                    height: 15.h,
+                                                  ),
+                                                  const CustomPasswordTextField(
+                                                      title: "Password")
                                                 ],
                                               ),
                                             ))
