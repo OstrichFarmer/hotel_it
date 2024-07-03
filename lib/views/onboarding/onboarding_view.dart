@@ -98,10 +98,27 @@ class OnboardingViewState extends State<OnboardingView>
       ) {
         return Scaffold(
           backgroundColor: model.backgroundColors[model.currentIndex],
-          body: Center(
-            child: AnimatedSwitcher(
-              duration: const Duration(seconds: 1),
-              child: _buildAnimatedImage(model),
+          body: Container(
+            decoration: BoxDecoration(
+              gradient: model.currentIndex == 3
+                  ? const LinearGradient(
+                      colors: [
+                        Color(0xff109A27),
+                        Color(0xffE8F6EA)
+                      ], // Define your gradient colors here
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    )
+                  : null,
+              color: model.currentIndex < 3
+                  ? model.backgroundColors[model.currentIndex]
+                  : null,
+            ),
+            child: Center(
+              child: AnimatedSwitcher(
+                duration: const Duration(seconds: 1),
+                child: _buildAnimatedImage(model),
+              ),
             ),
           ),
         );
