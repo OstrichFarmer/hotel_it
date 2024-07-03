@@ -6,19 +6,19 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
+import 'package:hotel_it/views/auth/auth_view.dart' as _i3;
 import 'package:hotel_it/views/onboarding/onboarding_view.dart' as _i2;
-import 'package:hotel_it/views/signup/signup_view.dart' as _i3;
 import 'package:stacked/stacked.dart' as _i1;
 import 'package:stacked_services/stacked_services.dart' as _i4;
 
 class Routes {
   static const onboardingView = '/onboarding-view';
 
-  static const signUpView = '/sign-up-view';
+  static const authView = '/auth-view';
 
   static const all = <String>{
     onboardingView,
-    signUpView,
+    authView,
   };
 }
 
@@ -29,8 +29,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.OnboardingView,
     ),
     _i1.RouteDef(
-      Routes.signUpView,
-      page: _i3.SignUpView,
+      Routes.authView,
+      page: _i3.AuthView,
     ),
   ];
 
@@ -41,9 +41,9 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.SignUpView: (data) {
+    _i3.AuthView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i3.SignUpView(),
+        builder: (context) => const _i3.AuthView(),
         settings: data,
       );
     },
@@ -71,14 +71,14 @@ extension NavigatorStateExtension on _i4.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToSignUpView([
+  Future<dynamic> navigateToAuthView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.signUpView,
+    return navigateTo<dynamic>(Routes.authView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -99,14 +99,14 @@ extension NavigatorStateExtension on _i4.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithSignUpView([
+  Future<dynamic> replaceWithAuthView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.signUpView,
+    return replaceWith<dynamic>(Routes.authView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

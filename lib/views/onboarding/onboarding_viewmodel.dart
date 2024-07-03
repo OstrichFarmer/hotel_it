@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_it/views/signup/signup_view.dart';
+import 'package:hotel_it/views/auth/auth_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'dart:async';
@@ -44,7 +44,7 @@ class OnboardingViewModel extends BaseViewModel {
 
   void _navigateToHome() {
     _navigationService.navigateWithTransition(
-      const SignUpView(),
+      const AuthView(),
       transitionStyle: Transition.fade,
       duration: const Duration(seconds: 2),
     );
