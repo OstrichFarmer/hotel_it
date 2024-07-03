@@ -122,7 +122,9 @@ class AuthView extends StatelessWidget {
                                                   SizedBox(
                                                     height: 30.h,
                                                   ),
-                                                  const CustomTextField(),
+                                                  const CustomTextField(
+                                                    title: "Username",
+                                                  ),
                                                 ],
                                               ),
                                             ))
