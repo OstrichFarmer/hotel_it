@@ -4,7 +4,6 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'dart:async';
 import 'package:hotel_it/app/app.locator.dart';
-import 'package:hotel_it/app/app.router.dart';
 
 class OnboardingViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
