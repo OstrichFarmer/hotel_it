@@ -38,7 +38,7 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
                     style: GoogleFonts.poppins(color: primaryColor),
                   ),
                 ),
-                border: UnderlineInputBorder(
+                enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.shade400)),
                 focusedBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(

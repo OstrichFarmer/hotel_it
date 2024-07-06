@@ -175,7 +175,7 @@ class AuthView extends StatelessWidget {
                                                           .toUpperCase(),
                                                       style:
                                                           GoogleFonts.poppins(
-                                                              fontSize: 16.sp),
+                                                              fontSize: 12.sp),
                                                     ),
                                                   ),
                                                   SizedBox(
@@ -212,13 +212,74 @@ class AuthView extends StatelessWidget {
                                                         Radius.circular(20.r),
                                                     topRight:
                                                         Radius.circular(20.r))),
-                                            child: Center(
-                                              child: Text(
-                                                "SIGN UP VIEW",
-                                                style: GoogleFonts.poppins(),
+                                            child: Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 20.w,
+                                                  top: 50.h,
+                                                  right: 20.w),
+                                              child: Column(
+                                                children: [
+                                                  const CustomTextField(
+                                                      title: "First name"),
+                                                  SizedBox(
+                                                    height: 15.h,
+                                                  ),
+                                                  const CustomTextField(
+                                                      title: "User name"),
+                                                  SizedBox(
+                                                    height: 15.h,
+                                                  ),
+                                                  const CustomTextField(
+                                                      title: "Email Address"),
+                                                  SizedBox(
+                                                    height: 15.h,
+                                                  ),
+                                                  const CustomPasswordTextField(
+                                                      title: "Password"),
+                                                  SizedBox(
+                                                    height: 30.h,
+                                                  ),
+                                                  CustomButton(
+                                                    onpressed: () {},
+                                                    title: "SIGN UP",
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Center(
+                                                    child: Text(
+                                                      "Or sign up with"
+                                                          .toUpperCase(),
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                              fontSize: 12.sp),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/icons/Google.png"),
+                                                      SizedBox(
+                                                        width: 20.w,
+                                                      ),
+                                                      Image.asset(
+                                                          "assets/icons/Facebook.png"),
+                                                      SizedBox(
+                                                        width: 20.w,
+                                                      ),
+                                                      Image.asset(
+                                                          "assets/icons/Twitter.png"),
+                                                    ],
+                                                  )
+                                                ],
                                               ),
-                                            ),
-                                          ),
+                                            )),
                                   )
                                 ],
                               ),
