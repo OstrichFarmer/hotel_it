@@ -133,11 +133,72 @@ class AuthView extends StatelessWidget {
                                                   ),
                                                   const CustomPasswordTextField(
                                                       title: "Password"),
+                                                  SizedBox(
+                                                    height: 20.h,
+                                                  ),
                                                   CustomButton(
-                                                    onpressed: () {
-                                                      print("clicked");
-                                                    },
+                                                    onpressed: () {},
                                                     title: "SIGN IN",
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Text(
+                                                        "Forgot your password?",
+                                                        style:
+                                                            GoogleFonts.poppins(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500),
+                                                      ),
+                                                      TextButton(
+                                                          onPressed: () {},
+                                                          child: Text(
+                                                            "Reset here",
+                                                            style: GoogleFonts.poppins(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                                color:
+                                                                    primaryColor),
+                                                          ))
+                                                    ],
+                                                  ),
+                                                  Center(
+                                                    child: Text(
+                                                      "Or sign in with"
+                                                          .toUpperCase(),
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                              fontSize: 16.sp),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10.h,
+                                                  ),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Image.asset(
+                                                          "assets/icons/Google.png"),
+                                                      SizedBox(
+                                                        width: 20.w,
+                                                      ),
+                                                      Image.asset(
+                                                          "assets/icons/Facebook.png"),
+                                                      SizedBox(
+                                                        width: 20.w,
+                                                      ),
+                                                      Image.asset(
+                                                          "assets/icons/Twitter.png"),
+                                                    ],
                                                   )
                                                 ],
                                               ),
