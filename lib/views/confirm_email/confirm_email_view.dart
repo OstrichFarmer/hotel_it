@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/views/confirm_email/confirm_email_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_otp.dart';
 import 'package:stacked/stacked.dart';
 
 class ConfirmEmailOtpView extends StatelessWidget {
-  const ConfirmEmailOtpView({Key? key}) : super(key: key);
+  const ConfirmEmailOtpView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +17,49 @@ class ConfirmEmailOtpView extends StatelessWidget {
         ConfirmEmailOtpViewModel model,
         Widget? child,
       ) {
-        return Scaffold(
-          body: Center(
-            child: Text(
-              'ConfirmEmailView',
+        return GestureDetector(
+          onTap: FocusScope.of(context).unfocus,
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              actions: [
+                Text(
+                  "Step 1 of 2",
+                  style: GoogleFonts.poppins(),
+                ),
+                SizedBox(
+                  width: 15.w,
+                )
+              ],
+            ),
+            body: Padding(
+              padding: EdgeInsets.only(
+                top: 40.h,
+                right: 15.w,
+                left: 15.w,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        "Confirm Email Address",
+                        style: GoogleFonts.raleway(fontSize: 22.sp),
+                      ),
+                    ),
+                    Text(
+                      "Enter the 4 digit verification code just sent to ********@gmail.com",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.raleway(),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    const OTPField()
+                  ],
+                ),
+              ),
             ),
           ),
         );
