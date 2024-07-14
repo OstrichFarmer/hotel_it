@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/confirm_email/confirm_email_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_otp.dart';
 import 'package:stacked/stacked.dart';
@@ -34,7 +35,7 @@ class ConfirmEmailOtpView extends StatelessWidget {
             ),
             body: Padding(
               padding: EdgeInsets.only(
-                top: 40.h,
+                top: 50.h,
                 right: 15.w,
                 left: 15.w,
               ),
@@ -54,9 +55,27 @@ class ConfirmEmailOtpView extends StatelessWidget {
                       style: GoogleFonts.raleway(),
                     ),
                     SizedBox(
-                      height: 10.h,
+                      height: 20.h,
                     ),
-                    const OTPField()
+                    const OTPField(),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Didn't receive the code?",
+                          style: GoogleFonts.raleway(),
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Resend",
+                              style: GoogleFonts.raleway(color: primaryColor),
+                            ))
+                      ],
+                    )
                   ],
                 ),
               ),
