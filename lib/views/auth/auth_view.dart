@@ -240,7 +240,9 @@ class AuthView extends StatelessWidget {
                                                     height: 30.h,
                                                   ),
                                                   CustomButton(
-                                                    onpressed: () {},
+                                                    onpressed: () {
+                                                      model.goToEmailOtp();
+                                                    },
                                                     title: "SIGN UP",
                                                   ),
                                                   SizedBox(

@@ -1,3 +1,3 @@
 import 'package:stacked/stacked.dart';
 
-class ConfirmEmailViewModel extends BaseViewModel {}
+class ConfirmEmailOtpViewModel extends BaseViewModel {}

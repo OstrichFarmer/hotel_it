@@ -1,6 +1,10 @@
+import 'package:hotel_it/app/app.locator.dart';
+import 'package:hotel_it/app/app.router.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class AuthViewModel extends BaseViewModel {
+  final NavigationService _navigationService = locator<NavigationService>();
   bool isSignIn = false;
 
   void gotoSignIn() {
@@ -11,5 +15,9 @@ class AuthViewModel extends BaseViewModel {
   void goToSignUp() {
     isSignIn = false;
     notifyListeners();
+  }
+
+  void goToEmailOtp() {
+    _navigationService.clearStackAndShow(Routes.confirmEmailOtpView);
   }
 }
