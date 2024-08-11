@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/services/network/constant.dart';
 
 class OTPField extends StatefulWidget {
-  const OTPField({super.key});
+  const OTPField({super.key, required this.onComplete});
+  final VoidCallback onComplete;
 
   @override
   OTPFieldState createState() => OTPFieldState();
@@ -31,6 +32,11 @@ class OTPFieldState extends State<OTPField> {
       _focusNodes[index + 1].requestFocus();
     } else if (value.isEmpty && index > 0) {
       _focusNodes[index - 1].requestFocus();
+    }
+
+    // Check if all fields are filled
+    if (_controllers.every((controller) => controller.text.isNotEmpty)) {
+      widget.onComplete();
     }
   }
 

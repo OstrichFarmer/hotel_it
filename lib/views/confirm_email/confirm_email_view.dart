@@ -57,7 +57,11 @@ class ConfirmEmailOtpView extends StatelessWidget {
                     SizedBox(
                       height: 20.h,
                     ),
-                    const OTPField(),
+                    OTPField(
+                      onComplete: () {
+                        model.goToSelectCountry();
+                      },
+                    ),
                     SizedBox(
                       height: 15.h,
                     ),
