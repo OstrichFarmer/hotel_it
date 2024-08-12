@@ -22,4 +22,8 @@ class AuthViewModel extends BaseViewModel {
   void goToEmailOtp() {
     _navigationService.clearStackAndShow(Routes.confirmEmailOtpView);
   }
+
+  void goToHomePage() {
+    _navigationService.clearStackAndShow(Routes.mainView);
+  }
 }
