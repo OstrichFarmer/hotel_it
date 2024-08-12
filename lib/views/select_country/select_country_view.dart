@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/select_country/select_country_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:stacked/stacked.dart';
 
 class SelectCountryView extends StatelessWidget {
@@ -121,7 +122,11 @@ class SelectCountryView extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 200.h,
+                    ),
+                    CustomButton(title: "COMPLETE", onpressed: () {})
                   ],
                 ),
               ),
