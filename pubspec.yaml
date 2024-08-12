@@ -18,6 +18,7 @@ dependencies:
   stacked_generator: ^1.6.0
   google_fonts: ^6.2.1
   flutter_screenutil: ^5.9.3
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
