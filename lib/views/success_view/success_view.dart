@@ -3,7 +3,7 @@ import 'package:hotel_it/views/success_view/success_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class SuccessView extends StatelessWidget {
-  const SuccessView({Key? key}) : super(key: key);
+  const SuccessView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -44,7 +44,7 @@ class SelectCountryView extends StatelessWidget {
             ),
             body: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 100.h),
+                padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 100.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -126,7 +126,11 @@ class SelectCountryView extends StatelessWidget {
                     SizedBox(
                       height: 200.h,
                     ),
-                    CustomButton(title: "COMPLETE", onpressed: () {})
+                    CustomButton(
+                        title: "COMPLETE",
+                        onpressed: () {
+                          model.goToSuccess();
+                        })
                   ],
                 ),
               ),
