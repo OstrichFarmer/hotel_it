@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_it/views/search_view/search_viewmodel.dart';
+import 'package:hotel_it/views/schedule_view/schedule_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-class SearchView extends StatelessWidget {
-  const SearchView({super.key});
+class ScheduleView extends StatelessWidget {
+  const ScheduleView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<SearchViewModel>.reactive(
-      viewModelBuilder: () => SearchViewModel(),
+    return ViewModelBuilder<ScheduleViewModel>.reactive(
+      viewModelBuilder: () => ScheduleViewModel(),
       builder: (
         BuildContext context,
-        SearchViewModel model,
+        ScheduleViewModel model,
         Widget? child,
       ) {
         return Scaffold(
           body: Center(
             child: Text(
-              'SearchView',
+              'ScheduleView',
             ),
           ),
         );
