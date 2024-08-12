@@ -44,7 +44,9 @@ class OnboardingViewModel extends BaseViewModel {
 
   void _navigateToHome() {
     _navigationService.navigateWithTransition(
-      const AuthView(),
+      const AuthView(
+        isSignIn: false,
+      ),
       transitionStyle: Transition.fade,
       duration: const Duration(seconds: 2),
     );

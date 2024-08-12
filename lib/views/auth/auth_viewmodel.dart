@@ -5,7 +5,9 @@ import 'package:stacked_services/stacked_services.dart';
 
 class AuthViewModel extends BaseViewModel {
   final NavigationService _navigationService = locator<NavigationService>();
-  bool isSignIn = false;
+  bool isSignIn;
+
+  AuthViewModel({required this.isSignIn});
 
   void gotoSignIn() {
     isSignIn = true;

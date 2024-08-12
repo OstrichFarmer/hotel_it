@@ -9,12 +9,14 @@ import 'package:hotel_it/widgets/custom_textField.dart';
 import 'package:stacked/stacked.dart';
 
 class AuthView extends StatelessWidget {
-  const AuthView({super.key});
+  const AuthView({super.key, required this.isSignIn});
+
+  final bool isSignIn;
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<AuthViewModel>.reactive(
-      viewModelBuilder: () => AuthViewModel(),
+      viewModelBuilder: () => AuthViewModel(isSignIn: isSignIn),
       builder: (
         BuildContext context,
         AuthViewModel model,
