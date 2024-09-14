@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hotel_it/views/main_view/main_viewmodel.dart';
 import 'package:stacked/stacked.dart';
+import 'package:hotel_it/views/main_view/main_viewmodel.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
