@@ -43,6 +43,41 @@ class MainView extends StatelessWidget {
               ),
             ],
           ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: model.currentIndex,
+            onTap: (index) => model.setIndex(index),
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home_rounded,
+                  size: 28.h,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.search,
+                  size: 28.h,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.calendar_month,
+                  size: 28.h,
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  size: 28.h,
+                ),
+                label: '',
+              ),
+            ],
+          ),
           drawer: Drawer(
             child: Material(
               child: ListView(
