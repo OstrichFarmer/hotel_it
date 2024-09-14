@@ -14,7 +14,7 @@ class ScheduleView extends StatelessWidget {
         ScheduleViewModel model,
         Widget? child,
       ) {
-        return Scaffold(
+        return const Scaffold(
           body: Center(
             child: Text(
               'ScheduleView',
