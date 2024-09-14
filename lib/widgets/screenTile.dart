@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_it/widgets/custom_textstyles.dart';
-import 'package:hotel_it/widgets/ui_helpers.dart';
+import 'package:hotel_it/common/custom_textstyles.dart';
+import 'package:hotel_it/common/ui_helpers.dart';
 
 class ScreenTile extends StatelessWidget {
   const ScreenTile({

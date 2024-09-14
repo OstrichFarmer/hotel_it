@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 final lightTheme = ThemeData(
     brightness: Brightness.light,
     primaryColor: Colors.white,
+    textTheme: const TextTheme(labelLarge: TextStyle(color: Colors.black)),
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: Colors.grey,
       brightness: Brightness.light,
@@ -19,6 +20,7 @@ final lightTheme = ThemeData(
 final darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: Colors.grey,
+    textTheme: const TextTheme(labelLarge: TextStyle(color: Colors.white)),
     colorScheme: ColorScheme.fromSwatch(
       primarySwatch: Colors.grey,
       brightness: Brightness.dark, // Ensure brightness matches ThemeData
