@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_it/views/contact/contact_viewmodel.dart';
+import 'package:hotel_it/views/profile/profile_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-class ContactView extends StatelessWidget {
-  const ContactView({super.key});
+class AboutUsView extends StatelessWidget {
+  const AboutUsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<ContactViewModel>.reactive(
-        viewModelBuilder: () => ContactViewModel(),
+    return ViewModelBuilder<ProfileViewModel>.reactive(
+        viewModelBuilder: () => ProfileViewModel(),
         builder: (
           BuildContext context,
-          ContactViewModel model,
+          ProfileViewModel model,
           Widget? child,
         ) {
           return const Scaffold(
             body: Center(),
           );
-        });
+        });;
   }
 }
