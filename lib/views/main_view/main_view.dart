@@ -132,6 +132,7 @@ class MainView extends StatelessWidget {
                     title: const Text('Home'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () {
+                      model.setIndex(0);
                       Navigator.pop(context); // Close the drawer
                     },
                   ),
@@ -140,6 +141,7 @@ class MainView extends StatelessWidget {
                     title: const Text('Search'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () {
+                      model.setIndex(1);
                       Navigator.pop(context); // Close the drawer
                     },
                   ),
@@ -148,6 +150,7 @@ class MainView extends StatelessWidget {
                     title: const Text('Notifications'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () {
+                      model.setIndex(2);
                       Navigator.pop(context); // Close the drawer
                     },
                   ),
@@ -156,6 +159,7 @@ class MainView extends StatelessWidget {
                     title: const Text('Profile'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () {
+                      model.setIndex(3);
                       Navigator.pop(context); // Close the drawer
                     },
                   ),
