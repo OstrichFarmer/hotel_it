@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/views/profile_view/profile_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -15,9 +16,19 @@ class ProfileView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
-          body: Center(
-            child: Text(
-              'ProfileView',
+          appBar: AppBar(backgroundColor: Colors.transparent),
+          body: Padding(
+            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 37,
+                  backgroundColor: Colors.lightGreen,
+                ),
+                Text("Jane Doe"),
+                
+              ],
             ),
           ),
         );
