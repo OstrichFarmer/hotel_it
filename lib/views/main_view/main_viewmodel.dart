@@ -21,7 +21,6 @@ class MainViewModel extends BaseViewModel {
 
   void setIndex(int index) {
     _currentIndex = index;
-    print('Changing index to $index');
     notifyListeners();
   }
 }
