@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/views/main_view/main_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -84,13 +85,48 @@ class MainView extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 children: <Widget>[
                   DrawerHeader(
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    child: const Text(
-                      'Drawer Header',
-                    ),
-                  ),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 22.r,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Big Ayat",
+                                style: GoogleFonts.poppins(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                "Nigeria",
+                                style: GoogleFonts.poppins(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          const Column(
+                            children: [
+                              Card(
+                                elevation: 5,
+                                child: Icon(Icons.cancel_outlined),
+                              ),
+                              Spacer(),
+                              Icon(Icons.dark_mode)
+                            ],
+                          )
+                        ],
+                      )),
                   ListTile(
                     leading: const Icon(Icons.home),
                     title: const Text('Home'),
