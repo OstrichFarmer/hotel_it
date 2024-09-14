@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hotel_it/common/ui_helpers.dart';
 import 'package:hotel_it/views/profile_view/profile_viewmodel.dart';
+import 'package:hotel_it/widgets/screen_tile.dart';
 import 'package:stacked/stacked.dart';
 
 class ProfileView extends StatelessWidget {
@@ -16,18 +18,26 @@ class ProfileView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
-          appBar: AppBar(backgroundColor: Colors.transparent),
+          appBar: AppBar(backgroundColor: Colors.transparent, title: Text("Profile", style: TextStyle(),),),
           body: Padding(
             padding: EdgeInsets.only(left: 20.w, right: 20.w),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 37,
                   backgroundColor: Colors.lightGreen,
                 ),
-                Text("Jane Doe"),
-                
+                const Text("Jane Doe"),
+                ScreenTile(onTap: () {}, icon: "", text: "Contact"),
+                verticalSpaceSmall,
+                ScreenTile(onTap: () {}, icon: "", text: "Language"),
+                verticalSpaceSmall,
+                ScreenTile(onTap: () {}, icon: "", text: "Terms & Conditions"),
+                verticalSpaceSmall,
+                ScreenTile(onTap: () {}, icon: "", text: "About Us"),
+                verticalSpaceSmall,
+                ScreenTile(onTap: () {}, icon: "", text: "Privacy Policy"),
               ],
             ),
           ),
