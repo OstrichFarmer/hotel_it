@@ -56,7 +56,7 @@ class HomePageView extends StatelessWidget {
                       height: 30.h,
                     ),
                     Container(
-                      height: 200.h,
+                      height: 182.h,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           border: Border.all(
