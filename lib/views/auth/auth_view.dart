@@ -5,7 +5,7 @@ import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/auth/auth_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/custom_password_textfield.dart';
-import 'package:hotel_it/widgets/custom_textField.dart';
+import 'package:hotel_it/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 
 class AuthView extends StatelessWidget {
