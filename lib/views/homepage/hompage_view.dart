@@ -34,7 +34,11 @@ class HomePageView extends StatelessWidget {
               ],
             ),
             body: Padding(
-              padding: EdgeInsets.only(left: 20.w, top: 20.h),
+              padding: EdgeInsets.only(
+                left: 20.w,
+                top: 20.h,
+                right: 20.w,
+              ),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,8 +49,23 @@ class HomePageView extends StatelessWidget {
                           fontSize: 18.sp, fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      "Where do you wanr to stay?",
+                      "Where do you want to stay?",
                       style: GoogleFonts.plusJakartaSans(),
+                    ),
+                    SizedBox(
+                      height: 30.h,
+                    ),
+                    Container(
+                      height: 200.h,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(8.r))),
+                      child: const Column(
+                        children: [],
+                      ),
                     )
                   ],
                 ),
