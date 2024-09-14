@@ -24,11 +24,11 @@ class ScreenTile extends StatelessWidget {
           horizontalSpaceSmall,
           Text(
             text,
-            style: w600Style(14, Colors.black),
+            style: w600Style(14, Theme.of(context).colorScheme.onSurface),
           ),
           const Spacer(),
           const Icon(
-            Icons.chevron_right,
+            Icons.arrow_forward,
             size: 17,
             color: Colors.green,
           ),

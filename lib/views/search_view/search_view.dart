@@ -14,7 +14,7 @@ class SearchView extends StatelessWidget {
         SearchViewModel model,
         Widget? child,
       ) {
-        return Scaffold(
+        return const Scaffold(
           body: Center(
             child: Text(
               'SearchView',
