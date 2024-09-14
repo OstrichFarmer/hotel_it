@@ -3,7 +3,7 @@ import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class HomePageView extends StatelessWidget {
-  const HomePageView({Key? key}) : super(key: key);
+  const HomePageView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,14 @@ class HomePageView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
-          body: Center(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            centerTitle: true,
+            title: const Text('Home'),
+          ),
+          body: const Center(
             child: Text(
-              'HomePageView',
+              'HomePageView Content',
             ),
           ),
         );
