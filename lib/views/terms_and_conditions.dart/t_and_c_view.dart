@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hotel_it/common/app_strings.dart';
+import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/views/terms_and_conditions.dart/t_and_c_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
@@ -14,8 +17,22 @@ class TAndCView extends StatelessWidget {
           TAndCViewModel model,
           Widget? child,
         ) {
-          return const Scaffold(
-            body: Center(),
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              title: Text(
+                "Terms and Condition",
+                style: w600Style(16, Theme.of(context).colorScheme.onSurface),
+              ),
+            ),
+            body: Padding(
+              padding: EdgeInsets.only(left: 20.w, right: 20.w),
+              child: Text(
+                ksLoremIpsum,
+                style: w400Style(
+                    17, Theme.of(context).colorScheme.onSurfaceVariant),
+              ),
+            ),
           );
         });
   }
