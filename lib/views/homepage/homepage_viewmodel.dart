@@ -1,11 +1,18 @@
 import 'package:stacked/stacked.dart';
 
 class HomePageViewModel extends BaseViewModel {
-  String? _selectedDate;
-  String? get selectedDate => _selectedDate;
+  String? _selectedCheckInDate;
+  String? _selectedCheckOutDate;
+  String? get selectedCheckInDate => _selectedCheckInDate;
+  String? get selectedCheckOutDate => _selectedCheckOutDate;
 
-  void selectDate(String date) {
-    _selectedDate = date;
+  void selectCheckInDate(String date) {
+    _selectedCheckInDate = date;
+    notifyListeners();
+  }
+
+  void selectCheckOutDate(String date) {
+    _selectedCheckOutDate = date;
     notifyListeners();
   }
 }

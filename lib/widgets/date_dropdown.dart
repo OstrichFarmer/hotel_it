@@ -6,8 +6,9 @@ import 'package:google_fonts/google_fonts.dart'; // or any calendar package
 class DateDropdown extends StatefulWidget {
   final void Function(String date) onDateSelected;
 
-  const DateDropdown({super.key, required this.onDateSelected});
-
+  const DateDropdown(
+      {super.key, required this.onDateSelected, required this.label});
+  final String label;
   @override
   DateDropdownState createState() => DateDropdownState();
 }
@@ -30,10 +31,10 @@ class DateDropdownState extends State<DateDropdown> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(4),
           ),
-          hintText: 'Select a date',
+          hintText: widget.label,
         ),
         child: Text(
-          _selectedDate ?? 'Select a date',
+          _selectedDate ?? widget.label,
           style: GoogleFonts.poppins(fontSize: 16),
         ),
       ),

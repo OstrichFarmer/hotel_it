@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/data/hotel_data.dart'; // Assuming this is where Hotel class and hotels list are imported
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/date_dropdown.dart';
 import 'package:hotel_it/widgets/location_textfield.dart';
 import 'package:hotel_it/widgets/recent_vacation_card.dart';
@@ -65,10 +66,39 @@ class HomePageView extends StatelessWidget {
                       child: Column(
                         children: [
                           LocationTextfield(),
-                          DateDropdown(
-                            onDateSelected: (date) {
-                              model.selectDate(date);
-                            },
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: DateDropdown(
+                                  label: "Check in",
+                                  onDateSelected: (date) {
+                                    model.selectCheckInDate(date);
+                                  },
+                                ),
+                              ),
+                              SizedBox(
+                                width: 8.w,
+                              ),
+                              Expanded(
+                                child: DateDropdown(
+                                  label: "Check out",
+                                  onDateSelected: (date) {
+                                    model.selectCheckOutDate(date);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          CustomButton(
+                            title: "Search",
+                            onpressed: () {},
+                            height: 40.h,
                           )
                         ],
                       )),
