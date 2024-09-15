@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/data/hotel_data.dart'; // Assuming this is where Hotel class and hotels list are imported
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
+import 'package:hotel_it/widgets/date_dropdown.dart';
 import 'package:hotel_it/widgets/location_textfield.dart';
 import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:stacked/stacked.dart';
@@ -61,8 +62,15 @@ class HomePageView extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(8.r)),
                       ),
-                      child: const Column(
-                        children: [LocationTextfield()],
+                      child: Column(
+                        children: [
+                          LocationTextfield(),
+                          DateDropdown(
+                            onDateSelected: (date) {
+                              model.selectDate(date);
+                            },
+                          )
+                        ],
                       )),
                   SizedBox(
                     height: 25.h,
