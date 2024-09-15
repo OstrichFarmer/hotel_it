@@ -14,7 +14,7 @@ class ContactView extends StatelessWidget {
           ContactViewModel model,
           Widget? child,
         ) {
-          return Scaffold(
+          return const Scaffold(
             body: Center(),
           );
         });
