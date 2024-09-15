@@ -112,17 +112,30 @@ class HomePageView extends StatelessWidget {
                     indent: 130,
                   ),
                   SizedBox(height: 25.h),
-                  Text(
-                    "Recent Vacation",
-                    style: GoogleFonts.plusJakartaSans(
-                        fontSize: 18.sp, fontWeight: FontWeight.w600),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Recent Vacation",
+                        style: GoogleFonts.plusJakartaSans(
+                            fontSize: 18.sp, fontWeight: FontWeight.w600),
+                      ),
+                      TextButton(
+                          iconAlignment: IconAlignment.end,
+                          onPressed: () {},
+                          child: Text(
+                            "View more",
+                            style: GoogleFonts.plusJakartaSans(
+                                color: Colors.black),
+                          ))
+                    ],
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Expanded(
                     child: ListView.builder(
-                      itemCount: hotels.length,
+                      itemCount: 5,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
                         final hotel = hotels[index];
