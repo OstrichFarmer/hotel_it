@@ -10,6 +10,7 @@ final lightTheme = ThemeData(
       primary: Colors.white,
       secondary: Colors.grey,
       onSurface: Colors.black,
+      onSurfaceVariant: const Color(0xFF5C5752),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
@@ -26,6 +27,7 @@ final darkTheme = ThemeData(
     ).copyWith(
       secondary: Colors.black,
       onSurface: Colors.white,
+      onSurfaceVariant: const Color(0xFFFFFFFF),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
