@@ -3,7 +3,7 @@ import 'package:hotel_it/views/schedule_view/schedule_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class ScheduleView extends StatelessWidget {
-  const ScheduleView({Key? key}) : super(key: key);
+  const ScheduleView({super.key});
 
   @override
   Widget build(BuildContext context) {

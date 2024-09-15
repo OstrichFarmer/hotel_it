@@ -54,8 +54,8 @@ class HomePageView extends StatelessWidget {
                   ),
                   SizedBox(height: 25.h),
                   Container(
-                      padding: EdgeInsets.all(8.r),
-                      height: 182.h,
+                      padding: EdgeInsets.all(12.r),
+                      height: 185.h,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(
@@ -65,7 +65,7 @@ class HomePageView extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          LocationTextfield(),
+                          const LocationTextfield(),
                           SizedBox(
                             height: 5.h,
                           ),
