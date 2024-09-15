@@ -3,7 +3,7 @@ import 'package:hotel_it/views/recent_vacation/recent_vacation_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
 class RecentVacationView extends StatelessWidget {
-  const RecentVacationView({Key? key}) : super(key: key);
+  const RecentVacationView({super.key});
 
   @override
   Widget build(BuildContext context) {
