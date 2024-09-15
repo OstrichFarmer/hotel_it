@@ -61,11 +61,19 @@ class HomePageView extends StatelessWidget {
                     child: Text("Featured Hotels or Promotions Here"),
                   ),
                 ),
-                SizedBox(height: 40.h),
+                SizedBox(height: 50.h),
+                Text(
+                  "Recent Vacation",
+                  style: GoogleFonts.plusJakartaSans(
+                      fontSize: 18.sp, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: hotels.length,
-                    //      scrollDirection: Axis.vertical,
+                    scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final hotel = hotels[index];
                       return RecentVacationCard(
@@ -73,6 +81,7 @@ class HomePageView extends StatelessWidget {
                         hotelName: hotel.name,
                         location: hotel.location,
                         rating: hotel.averageRating.toString(),
+                        price: "\$${hotel.price}",
                       );
                     },
                   ),

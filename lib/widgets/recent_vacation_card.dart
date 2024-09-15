@@ -9,22 +9,23 @@ class RecentVacationCard extends StatelessWidget {
     required this.location,
     required this.hotelName,
     required this.rating,
+    required this.price,
   });
 
-  final String image, location, hotelName, rating;
+  final String image, location, hotelName, rating, price;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 180.w,
-      height: 190.h,
+      height: 140.h,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.r),
         ),
         elevation: 5,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               margin: EdgeInsets.only(left: 5.w, right: 5.w, top: 5.h),
@@ -38,10 +39,11 @@ class RecentVacationCard extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(8.r)),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0.w), // Adjust padding as needed
-              child: SizedBox(
-                width: double.infinity, // Ensures the Row fits within SizedBox
+            Positioned(
+              top: 120.h,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: 5.w, right: 3.w), // Adjust padding as needed
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -56,36 +58,33 @@ class RecentVacationCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          rating,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14.sp,
-                          ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 9.w),
+                      child: Text(
+                        "$rating ⭐",
+                        style: GoogleFonts.poppins(
+                          fontSize: 14.sp,
                         ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.orange,
-                          size: 16.h,
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0.w), // Adjust padding as needed
-              child: SizedBox(
-                width: double.infinity, // Ensures the Row fits within SizedBox
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.all(8.0.w), // Adjust padding as needed
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      location,
-                      style: GoogleFonts.poppins(
-                        fontSize: 12.sp,
+                    SizedBox(
+                      width: 120,
+                      child: Text(
+                        location,
+                        style: GoogleFonts.poppins(
+                          fontSize: 12.sp,
+                        ),
                       ),
                     ),
                     Icon(
@@ -96,6 +95,17 @@ class RecentVacationCard extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+              top: 20,
+              right: 20,
+              child: Container(
+                padding: EdgeInsets.all(2.h),
+                width: 50.w,
+                height: 20.h,
+                color: Colors.white,
+                child: Center(child: Text(price)),
+              ),
+            )
           ],
         ),
       ),
