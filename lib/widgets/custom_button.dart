@@ -8,15 +8,17 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.title,
     required this.onpressed,
+    this.height = 60,
   });
   final String title;
   final Function() onpressed;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            minimumSize: Size(double.infinity, 60.h),
+            minimumSize: Size(double.infinity, height.h),
             backgroundColor: primaryColor),
         onPressed: onpressed,
         child: Text(
