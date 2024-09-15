@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/data/hotel_data.dart'; // Assuming this is where Hotel class and hotels list are imported
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
+import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:stacked/stacked.dart';
 
 class HomePageView extends StatelessWidget {
@@ -60,23 +61,27 @@ class HomePageView extends StatelessWidget {
                     child: Text("Featured Hotels or Promotions Here"),
                   ),
                 ),
-                SizedBox(height: 40.h),
+                SizedBox(height: 50.h),
+                Text(
+                  "Recent Vacation",
+                  style: GoogleFonts.plusJakartaSans(
+                      fontSize: 18.sp, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: hotels.length,
-                    //      scrollDirection: Axis.vertical,
+                    scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final hotel = hotels[index];
-                      return ListTile(
-                        leading: Image.asset(
-                          hotel.imageUrl,
-                          width: 50.w,
-                          height: 50.h,
-                          fit: BoxFit.cover,
-                        ),
-                        title: Text(hotel.name),
-                        subtitle: Text("\$${hotel.price} per night"),
-                        trailing: Text("${hotel.averageRating} ⭐"),
+                      return RecentVacationCard(
+                        image: hotel.imageUrl,
+                        hotelName: hotel.name,
+                        location: hotel.location,
+                        rating: hotel.averageRating.toString(),
+                        price: "\$${hotel.price}",
                       );
                     },
                   ),
