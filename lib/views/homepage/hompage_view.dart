@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/data/hotel_data.dart'; // Assuming this is where Hotel class and hotels list are imported
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
+import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:stacked/stacked.dart';
 
 class HomePageView extends StatelessWidget {
@@ -67,16 +68,11 @@ class HomePageView extends StatelessWidget {
                     //      scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       final hotel = hotels[index];
-                      return ListTile(
-                        leading: Image.asset(
-                          hotel.imageUrl,
-                          width: 50.w,
-                          height: 50.h,
-                          fit: BoxFit.cover,
-                        ),
-                        title: Text(hotel.name),
-                        subtitle: Text("\$${hotel.price} per night"),
-                        trailing: Text("${hotel.averageRating} ⭐"),
+                      return RecentVacationCard(
+                        image: hotel.imageUrl,
+                        hotelName: hotel.name,
+                        location: hotel.location,
+                        rating: hotel.averageRating.toString(),
                       );
                     },
                   ),
