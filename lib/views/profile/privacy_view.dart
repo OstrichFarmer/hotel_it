@@ -2,27 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/app_strings.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
-import 'package:hotel_it/views/terms_and_conditions.dart/t_and_c_viewmodel.dart';
+import 'package:hotel_it/views/profile/profile_viewmodel.dart';
 import 'package:stacked/stacked.dart';
 
-class TAndCView extends StatelessWidget {
-  const TAndCView({super.key});
+class PrivacyView extends StatelessWidget {
+  const PrivacyView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<TAndCViewModel>.reactive(
-        viewModelBuilder: () => TAndCViewModel(),
+    return ViewModelBuilder<ProfileViewModel>.reactive(
+        viewModelBuilder: () => ProfileViewModel(),
         builder: (
           BuildContext context,
-          TAndCViewModel model,
+          ProfileViewModel model,
           Widget? child,
         ) {
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
               title: Text(
-                "Terms and Condition",
-                style: w600Style(17, Theme.of(context).colorScheme.onSurface),
+                "Privacy Policy",
+                style: w600Style(
+                  17,
+                  Theme.of(context).colorScheme.onSurface,
+                ),
               ),
             ),
             body: Padding(
@@ -30,7 +33,7 @@ class TAndCView extends StatelessWidget {
               child: Text(
                 ksLoremIpsum,
                 style: w400Style(
-                    17, Theme.of(context).colorScheme.onSurfaceVariant),
+                    16, Theme.of(context).colorScheme.onSurfaceVariant),
               ),
             ),
           );

@@ -22,7 +22,7 @@ class AboutUsView extends StatelessWidget {
               backgroundColor: Colors.transparent,
               title: Text(
                 "About Us",
-                style: w600Style(16, Theme.of(context).colorScheme.onSurface),
+                style: w600Style(17, Theme.of(context).colorScheme.onSurface),
               ),
             ),
             body: Padding(

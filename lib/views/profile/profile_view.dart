@@ -23,7 +23,7 @@ class ProfileView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             title: Text(
               "Profile",
-              style: w600Style(14, Theme.of(context).colorScheme.onSurface),
+              style: w600Style(17, Theme.of(context).colorScheme.onSurface),
             ),
           ),
           body: Padding(
