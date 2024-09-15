@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart'; // or any calendar package
+import 'package:google_fonts/google_fonts.dart';
 
 class DateDropdown extends StatefulWidget {
   final void Function(String date) onDateSelected;
@@ -9,6 +9,7 @@ class DateDropdown extends StatefulWidget {
   const DateDropdown(
       {super.key, required this.onDateSelected, required this.label});
   final String label;
+
   @override
   DateDropdownState createState() => DateDropdownState();
 }
@@ -42,17 +43,26 @@ class DateDropdownState extends State<DateDropdown> {
   }
 
   void _showDatePicker(BuildContext context) {
-    showModalBottomSheet(
+    showDialog(
       context: context,
       builder: (context) {
-        return Container(
-          padding: const EdgeInsets.all(16.0),
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(16.r),
+              bottom: Radius.circular(16.r),
+            ),
+          ),
+          insetPadding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 0.15,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Replace with your calendar widget
-              SizedBox(
+              Container(
+                padding: EdgeInsets.all(16.h),
                 height: 300.h,
+                width: 300.w,
                 child: CalendarCarousel(
                   onDayPressed: (date, events) {
                     setState(() {
@@ -61,16 +71,6 @@ class DateDropdownState extends State<DateDropdown> {
                     });
                     Navigator.pop(context);
                   },
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Confirm',
-                  style: GoogleFonts.poppins(color: Colors.black),
                 ),
               ),
             ],
