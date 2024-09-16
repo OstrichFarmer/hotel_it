@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hotel_it/data/hotel_data.dart'; // Assuming this is where Hotel class and hotels list are imported
+import 'package:hotel_it/data/recent_vacation.dart';
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/date_dropdown.dart';
@@ -122,7 +122,9 @@ class HomePageView extends StatelessWidget {
                       ),
                       TextButton(
                           iconAlignment: IconAlignment.end,
-                          onPressed: () {},
+                          onPressed: () {
+                            model.goToRecentVacation();
+                          },
                           child: Text(
                             "View more",
                             style: GoogleFonts.plusJakartaSans(
@@ -138,10 +140,10 @@ class HomePageView extends StatelessWidget {
                       itemCount: 5,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        final hotel = hotels[index];
+                        final hotel = recentVacations[index];
                         return RecentVacationCard(
-                          image: hotel.imageUrl,
-                          hotelName: hotel.name,
+                          image: hotel.image,
+                          hotelName: hotel.hotelName,
                           location: hotel.location,
                           rating: hotel.averageRating.toString(),
                           price: "\$${hotel.price}",
