@@ -20,5 +20,7 @@ class HomePageViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void goToRecentVacation() {}
+  void goToRecentVacation() {
+    _navigationService.navigateTo(Routes.recentVacationView);
+  }
 }

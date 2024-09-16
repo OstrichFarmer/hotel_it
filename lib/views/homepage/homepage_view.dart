@@ -122,7 +122,9 @@ class HomePageView extends StatelessWidget {
                       ),
                       TextButton(
                           iconAlignment: IconAlignment.end,
-                          onPressed: () {},
+                          onPressed: () {
+                            model.goToRecentVacation();
+                          },
                           child: Text(
                             "View more",
                             style: GoogleFonts.plusJakartaSans(
