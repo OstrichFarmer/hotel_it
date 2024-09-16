@@ -29,28 +29,30 @@ class ContactView extends StatelessWidget {
             ),
             body: Padding(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
-              child: Column(
-                children: [
-                  Text(
-                    ksContactRequest,
-                    style: w400Style(
-                        17, Theme.of(context).colorScheme.onSurfaceVariant),
-                  ),
-                  verticalSpaceSmall,
-                  const CustomTextField(title: 'Name'),
-                  verticalSpaceFifteen,
-                  Text(
-                    'Please enter a valid email address',
-                    style: w400Style(
-                        10, Theme.of(context).colorScheme.onSecondaryFixed),
-                  ),
-                  verticalSpaceTiny,
-                  const CustomTextField(title: 'Email'),
-                  verticalSpaceSmall,
-                  const CustomTextField(title: 'Phone number'),
-                  verticalSpaceSmall,
-                  const CustomTextField(title: 'Let us know how we can help')
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      ksContactRequest,
+                      style: w400Style(
+                          17, Theme.of(context).colorScheme.onSurfaceVariant),
+                    ),
+                    verticalSpaceSmall,
+                    const CustomTextField(title: 'Name'),
+                    verticalSpaceTiny,
+                    Text(
+                      'Please enter a valid email address',
+                      style: w400Style(
+                          10, Theme.of(context).colorScheme.onSecondaryFixed),
+                    ),
+                    const CustomTextField(title: 'Email'),
+                    verticalSpaceTiny,
+                    const CustomTextField(title: 'Phone number'),
+                    verticalSpaceTiny,
+                    const CustomTextField(title: 'Let us know how we can help')
+                  ],
+                ),
               ),
             ),
           );

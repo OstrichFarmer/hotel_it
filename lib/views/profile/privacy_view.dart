@@ -30,10 +30,12 @@ class PrivacyView extends StatelessWidget {
             ),
             body: Padding(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
-              child: Text(
-                ksLoremIpsum,
-                style: w400Style(
-                    16, Theme.of(context).colorScheme.onSurfaceVariant),
+              child: SingleChildScrollView(
+                child: Text(
+                  ksLoremIpsum,
+                  style: w400Style(
+                      16, Theme.of(context).colorScheme.onSurfaceVariant),
+                ),
               ),
             ),
           );

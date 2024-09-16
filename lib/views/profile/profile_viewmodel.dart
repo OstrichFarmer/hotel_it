@@ -10,9 +10,19 @@ class ProfileViewModel extends BaseViewModel {
     _navigationService.navigateTo(Routes.contactView);
   }
 
+  void goToLanguageView() {
+    _navigationService.navigateTo(Routes.languageView);
+  }
+
   void goToAboutUsView() {
     _navigationService.navigateTo(Routes.aboutUsView);
   }
 
-  // void goToPrivacyView(){_navigationService.navigateTo(Routes.privac)}
+  void goToTandCView() {
+    _navigationService.navigateTo(Routes.tAndCView);
+  }
+
+  void goToPrivacyPolicyView() {
+    _navigationService.navigateTo(Routes.privacyView);
+  }
 }

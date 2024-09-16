@@ -36,34 +36,41 @@ class ProfileView extends StatelessWidget {
                   backgroundColor: Colors.lightGreen,
                 ),
                 const Text("Jane Doe"),
+                verticalSpaceMedium,
                 ScreenTile(
                   onTap: () {
-                    model.goToContactView;
+                    model.goToContactView();
                   },
-                  icon: Icons.mail,
+                  icon: Icons.mail_outline,
                   text: "Contact",
                 ),
-                verticalSpaceSmall,
+                verticalSpaceTwenty,
                 ScreenTile(
-                  onTap: () {},
-                  icon: Icons.language,
+                  onTap: () {
+                    model.goToLanguageView();
+                  },
+                  icon: Icons.language_outlined,
                   text: "Language",
                 ),
-                verticalSpaceSmall,
-                ScreenTile(
-                    onTap: () {},
-                    icon: Icons.sticky_note_2_outlined,
-                    text: "Terms & Conditions"),
-                verticalSpaceSmall,
+                verticalSpaceTwenty,
                 ScreenTile(
                     onTap: () {
-                      model.goToAboutUsView;
+                      model.goToTandCView();
+                    },
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "Terms & Conditions"),
+                verticalSpaceTwenty,
+                ScreenTile(
+                    onTap: () {
+                      model.goToAboutUsView();
                     },
                     icon: Icons.sticky_note_2_outlined,
                     text: "About Us"),
-                verticalSpaceSmall,
+                verticalSpaceTwenty,
                 ScreenTile(
-                    onTap: () {},
+                    onTap: () {
+                      model.goToPrivacyPolicyView();
+                    },
                     icon: Icons.sticky_note_2_outlined,
                     text: "Privacy Policy"),
               ],

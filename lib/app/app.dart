@@ -5,6 +5,8 @@ import 'package:hotel_it/views/main_view/main_view.dart';
 import 'package:hotel_it/views/onboarding/onboarding_view.dart';
 import 'package:hotel_it/views/auth/auth_view.dart';
 import 'package:hotel_it/views/profile/about_us.dart';
+import 'package:hotel_it/views/profile/language_view.dart';
+import 'package:hotel_it/views/profile/privacy_view.dart';
 import 'package:hotel_it/views/profile/profile_view.dart';
 import 'package:hotel_it/views/schedule_view/schedule_view.dart';
 import 'package:hotel_it/views/search_view/search_view.dart';
@@ -29,6 +31,8 @@ import 'package:stacked/stacked_annotations.dart';
     AdaptiveRoute(page: ContactView),
     AdaptiveRoute(page: TAndCView),
     AdaptiveRoute(page: AboutUsView),
+    AdaptiveRoute(page: PrivacyView),
+    AdaptiveRoute(page: LanguageView),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
