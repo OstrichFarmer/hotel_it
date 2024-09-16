@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/app_strings.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
+import 'package:hotel_it/common/ui_helpers.dart';
 import 'package:hotel_it/views/contact/contact_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 
 class ContactView extends StatelessWidget {
@@ -30,10 +32,24 @@ class ContactView extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    ksLoremIpsum,
+                    ksContactRequest,
                     style: w400Style(
                         17, Theme.of(context).colorScheme.onSurfaceVariant),
-                  )
+                  ),
+                  verticalSpaceSmall,
+                  const CustomTextField(title: 'Name'),
+                  verticalSpaceFifteen,
+                  Text(
+                    'Please enter a valid email address',
+                    style: w400Style(
+                        10, Theme.of(context).colorScheme.onSecondaryFixed),
+                  ),
+                  verticalSpaceTiny,
+                  const CustomTextField(title: 'Email'),
+                  verticalSpaceSmall,
+                  const CustomTextField(title: 'Phone number'),
+                  verticalSpaceSmall,
+                  const CustomTextField(title: 'Let us know how we can help')
                 ],
               ),
             ),

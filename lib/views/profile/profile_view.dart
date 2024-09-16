@@ -7,7 +7,7 @@ import 'package:hotel_it/widgets/screen_tile.dart';
 import 'package:stacked/stacked.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({super.key}); 
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +36,36 @@ class ProfileView extends StatelessWidget {
                   backgroundColor: Colors.lightGreen,
                 ),
                 const Text("Jane Doe"),
-                ScreenTile(onTap: () {}, icon: "", text: "Contact"),
+                ScreenTile(
+                  onTap: () {
+                    model.goToContactView;
+                  },
+                  icon: Icons.mail,
+                  text: "Contact",
+                ),
                 verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Language"),
+                ScreenTile(
+                  onTap: () {},
+                  icon: Icons.language,
+                  text: "Language",
+                ),
                 verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Terms & Conditions"),
+                ScreenTile(
+                    onTap: () {},
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "Terms & Conditions"),
                 verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "About Us"),
+                ScreenTile(
+                    onTap: () {
+                      model.goToAboutUsView;
+                    },
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "About Us"),
                 verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Privacy Policy"),
+                ScreenTile(
+                    onTap: () {},
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "Privacy Policy"),
               ],
             ),
           ),

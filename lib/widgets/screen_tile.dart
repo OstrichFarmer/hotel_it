@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/common/ui_helpers.dart';
 
@@ -10,7 +11,7 @@ class ScreenTile extends StatelessWidget {
     required this.text,
   });
 
-  final String icon;
+  final IconData icon;
   final String text;
   final VoidCallback onTap;
 
@@ -20,17 +21,26 @@ class ScreenTile extends StatelessWidget {
       onTap: onTap,
       child: Row(
         children: [
-          Image.asset(icon),
+          Container(
+              color: Theme.of(context).colorScheme.onSecondaryFixed,
+              width: 30.sp,
+              height: 30.sp,
+              padding: EdgeInsets.all(10.sp),
+              child: Icon(
+                icon,
+                size: 14.sp,
+                color: Theme.of(context).colorScheme.onSecondaryContainer,
+              )),
           horizontalSpaceSmall,
           Text(
             text,
             style: w600Style(14, Theme.of(context).colorScheme.onSurface),
           ),
           const Spacer(),
-          const Icon(
+          Icon(
             Icons.arrow_forward,
-            size: 17,
-            color: Colors.green,
+            size: 17.sp,
+            color: Theme.of(context).colorScheme.onSecondaryFixed,
           ),
         ],
       ),
