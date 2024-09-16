@@ -31,7 +31,7 @@ class MainView extends StatelessWidget {
                   builder: (BuildContext context) {
                     return IconButton(
                       icon: Icon(
-                        Icons.menu,
+                        Icons.grid_view_outlined,
                         size: 28.h,
                         color: Colors.black,
                       ),

@@ -18,8 +18,9 @@ class RecentVacationView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             appBar: AppBar(
+              backgroundColor: Theme.of(context).colorScheme.primary,
               leading: InkWell(
                 onTap: () {
                   Navigator.pop(context);
