@@ -7,7 +7,7 @@ import 'package:hotel_it/widgets/screen_tile.dart';
 import 'package:stacked/stacked.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({Key? key}) : super(key: key);
+  const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class ProfileView extends StatelessWidget {
             backgroundColor: Colors.transparent,
             title: Text(
               "Profile",
-              style: w600Style(14, Theme.of(context).colorScheme.onSurface),
+              style: w600Style(17, Theme.of(context).colorScheme.onSurface),
             ),
           ),
           body: Padding(
@@ -36,15 +36,43 @@ class ProfileView extends StatelessWidget {
                   backgroundColor: Colors.lightGreen,
                 ),
                 const Text("Jane Doe"),
-                ScreenTile(onTap: () {}, icon: "", text: "Contact"),
-                verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Language"),
-                verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Terms & Conditions"),
-                verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "About Us"),
-                verticalSpaceSmall,
-                ScreenTile(onTap: () {}, icon: "", text: "Privacy Policy"),
+                verticalSpaceMedium,
+                ScreenTile(
+                  onTap: () {
+                    model.goToContactView();
+                  },
+                  icon: Icons.mail_outline,
+                  text: "Contact",
+                ),
+                verticalSpaceTwenty,
+                ScreenTile(
+                  onTap: () {
+                    model.goToLanguageView();
+                  },
+                  icon: Icons.language_outlined,
+                  text: "Language",
+                ),
+                verticalSpaceTwenty,
+                ScreenTile(
+                    onTap: () {
+                      model.goToTandCView();
+                    },
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "Terms & Conditions"),
+                verticalSpaceTwenty,
+                ScreenTile(
+                    onTap: () {
+                      model.goToAboutUsView();
+                    },
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "About Us"),
+                verticalSpaceTwenty,
+                ScreenTile(
+                    onTap: () {
+                      model.goToPrivacyPolicyView();
+                    },
+                    icon: Icons.sticky_note_2_outlined,
+                    text: "Privacy Policy"),
               ],
             ),
           ),

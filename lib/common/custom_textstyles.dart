@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle w600Style(
@@ -8,7 +9,7 @@ TextStyle w600Style(
   double? height,
 }) {
   return GoogleFonts.poppins(
-    fontSize: size,
+    fontSize: size.sp,
     color: color,
     fontWeight: FontWeight.w600,
     height: 1.7,
@@ -23,7 +24,7 @@ TextStyle w400Style(
   double? height,
 }) {
   return GoogleFonts.poppins(
-    fontSize: size,
+    fontSize: size.sp,
     color: color,
     fontWeight: FontWeight.w400,
     decoration: decoration,
