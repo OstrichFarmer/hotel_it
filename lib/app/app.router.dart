@@ -5,26 +5,28 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i17;
+import 'package:flutter/material.dart' as _i18;
 import 'package:flutter/material.dart';
 import 'package:hotel_it/views/auth/auth_view.dart' as _i3;
 import 'package:hotel_it/views/confirm_email/confirm_email_view.dart' as _i4;
 import 'package:hotel_it/views/contact/contact_view.dart' as _i12;
-import 'package:hotel_it/views/homepage/hompage_view.dart' as _i8;
+import 'package:hotel_it/views/homepage/homepage_view.dart' as _i8;
 import 'package:hotel_it/views/main_view/main_view.dart' as _i7;
 import 'package:hotel_it/views/onboarding/onboarding_view.dart' as _i2;
-import 'package:hotel_it/views/profile/about_us.dart' as _i14;
-import 'package:hotel_it/views/profile/language_view.dart' as _i16;
-import 'package:hotel_it/views/profile/privacy_view.dart' as _i15;
+import 'package:hotel_it/views/profile/about_us.dart' as _i15;
+import 'package:hotel_it/views/profile/language_view.dart' as _i17;
+import 'package:hotel_it/views/profile/privacy_view.dart' as _i16;
 import 'package:hotel_it/views/profile/profile_view.dart' as _i9;
+import 'package:hotel_it/views/recent_vacation/recent_vacation_view.dart'
+    as _i13;
 import 'package:hotel_it/views/schedule_view/schedule_view.dart' as _i10;
 import 'package:hotel_it/views/search_view/search_view.dart' as _i11;
 import 'package:hotel_it/views/select_country/select_country_view.dart' as _i5;
 import 'package:hotel_it/views/success_view/success_view.dart' as _i6;
 import 'package:hotel_it/views/terms_and_conditions.dart/t_and_c_view.dart'
-    as _i13;
+    as _i14;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i18;
+import 'package:stacked_services/stacked_services.dart' as _i19;
 
 class Routes {
   static const onboardingView = '/onboarding-view';
@@ -49,6 +51,8 @@ class Routes {
 
   static const contactView = '/contact-view';
 
+  static const recentVacationView = '/recent-vacation-view';
+
   static const tAndCView = '/t-and-cView';
 
   static const aboutUsView = '/about-us-view';
@@ -69,6 +73,7 @@ class Routes {
     scheduleView,
     searchView,
     contactView,
+    recentVacationView,
     tAndCView,
     aboutUsView,
     privacyView,
@@ -123,20 +128,24 @@ class StackedRouter extends _i1.RouterBase {
       page: _i12.ContactView,
     ),
     _i1.RouteDef(
+      Routes.recentVacationView,
+      page: _i13.RecentVacationView,
+    ),
+    _i1.RouteDef(
       Routes.tAndCView,
-      page: _i13.TAndCView,
+      page: _i14.TAndCView,
     ),
     _i1.RouteDef(
       Routes.aboutUsView,
-      page: _i14.AboutUsView,
+      page: _i15.AboutUsView,
     ),
     _i1.RouteDef(
       Routes.privacyView,
-      page: _i15.PrivacyView,
+      page: _i16.PrivacyView,
     ),
     _i1.RouteDef(
       Routes.languageView,
-      page: _i16.LanguageView,
+      page: _i17.LanguageView,
     ),
   ];
 
@@ -209,28 +218,34 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i13.TAndCView: (data) {
+    _i13.RecentVacationView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i13.TAndCView(),
+        builder: (context) => const _i13.RecentVacationView(),
         settings: data,
       );
     },
-    _i14.AboutUsView: (data) {
+    _i14.TAndCView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i14.AboutUsView(),
+        builder: (context) => const _i14.TAndCView(),
         settings: data,
       );
     },
-    _i15.PrivacyView: (data) {
+    _i15.AboutUsView: (data) {
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i15.PrivacyView(),
+        builder: (context) => const _i15.AboutUsView(),
         settings: data,
       );
     },
-    _i16.LanguageView: (data) {
+    _i16.PrivacyView: (data) {
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const _i16.PrivacyView(),
+        settings: data,
+      );
+    },
+    _i17.LanguageView: (data) {
       final args = data.getArgs<LanguageViewArguments>(nullOk: false);
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => _i16.LanguageView(
+        builder: (context) => _i17.LanguageView(
             key: args.key, request: args.request, completer: args.completer),
         settings: data,
       );
@@ -250,7 +265,7 @@ class AuthViewArguments {
     required this.isSignIn,
   });
 
-  final _i17.Key? key;
+  final _i18.Key? key;
 
   final bool isSignIn;
 
@@ -278,11 +293,11 @@ class LanguageViewArguments {
     required this.completer,
   });
 
-  final _i17.Key? key;
+  final _i18.Key? key;
 
-  final _i18.SheetRequest<dynamic> request;
+  final _i19.SheetRequest<dynamic> request;
 
-  final dynamic Function(_i18.SheetResponse<dynamic>) completer;
+  final dynamic Function(_i19.SheetResponse<dynamic>) completer;
 
   @override
   String toString() {
@@ -303,7 +318,7 @@ class LanguageViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i18.NavigationService {
+extension NavigatorStateExtension on _i19.NavigationService {
   Future<dynamic> navigateToOnboardingView([
     int? routerId,
     bool preventDuplicates = true,
@@ -319,7 +334,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> navigateToAuthView({
-    _i17.Key? key,
+    _i18.Key? key,
     required bool isSignIn,
     int? routerId,
     bool preventDuplicates = true,
@@ -461,6 +476,20 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToRecentVacationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.recentVacationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> navigateToTAndCView([
     int? routerId,
     bool preventDuplicates = true,
@@ -504,9 +533,9 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> navigateToLanguageView({
-    _i17.Key? key,
-    required _i18.SheetRequest<dynamic> request,
-    required dynamic Function(_i18.SheetResponse<dynamic>) completer,
+    _i18.Key? key,
+    required _i19.SheetRequest<dynamic> request,
+    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -537,7 +566,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> replaceWithAuthView({
-    _i17.Key? key,
+    _i18.Key? key,
     required bool isSignIn,
     int? routerId,
     bool preventDuplicates = true,
@@ -679,6 +708,20 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> replaceWithRecentVacationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.recentVacationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithTAndCView([
     int? routerId,
     bool preventDuplicates = true,
@@ -722,9 +765,9 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> replaceWithLanguageView({
-    _i17.Key? key,
-    required _i18.SheetRequest<dynamic> request,
-    required dynamic Function(_i18.SheetResponse<dynamic>) completer,
+    _i18.Key? key,
+    required _i19.SheetRequest<dynamic> request,
+    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,

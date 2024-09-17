@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_it/views/homepage/hompage_view.dart';
+import 'package:hotel_it/views/homepage/homepage_view.dart';
 import 'package:hotel_it/views/profile/profile_view.dart';
 import 'package:hotel_it/views/schedule_view/schedule_view.dart';
 import 'package:hotel_it/views/search_view/search_view.dart';

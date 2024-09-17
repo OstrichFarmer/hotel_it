@@ -36,9 +36,10 @@ class LanguageView extends StatelessWidget {
                       request.title ?? '',
                       style: w600Style(
                           22, Theme.of(context).colorScheme.onSurface),
-                    ), verticalSpaceFifteen, 
+                    ),
+                    verticalSpaceFifteen,
                   ],
-                ), 
+                ),
                 Text("data"),
               ],
             ),
