@@ -73,8 +73,8 @@ class RecentVacationViewCard extends StatelessWidget {
     super.key,
     required this.hotelName,
     required this.location,
-    required this.checkInDate,
-    required this.checkOutDate,
+    this.checkInDate = "",
+    this.checkOutDate = "",
     required this.image,
     required this.year,
   });

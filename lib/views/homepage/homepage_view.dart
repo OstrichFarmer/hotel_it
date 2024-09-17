@@ -31,7 +31,7 @@ class HomePageView extends StatelessWidget {
               title: Text(
                 'Home',
                 style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               actions: [
