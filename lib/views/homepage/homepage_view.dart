@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/data/recent_vacation.dart';
-import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/date_dropdown.dart';
-import 'package:hotel_it/widgets/location_textfield.dart';
 import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:stacked/stacked.dart';
 
@@ -123,7 +121,7 @@ class HomePageView extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 5.h,
+                            height: 10.h,
                           ),
                           Row(
                             children: [
