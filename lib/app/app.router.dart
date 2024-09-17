@@ -228,8 +228,10 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i16.LanguageView: (data) {
+      final args = data.getArgs<LanguageViewArguments>(nullOk: false);
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i16.LanguageView(),
+        builder: (context) => _i16.LanguageView(
+            key: args.key, request: args.request, completer: args.completer),
         settings: data,
       );
     },
@@ -266,6 +268,38 @@ class AuthViewArguments {
   @override
   int get hashCode {
     return key.hashCode ^ isSignIn.hashCode;
+  }
+}
+
+class LanguageViewArguments {
+  const LanguageViewArguments({
+    this.key,
+    required this.request,
+    required this.completer,
+  });
+
+  final _i17.Key? key;
+
+  final _i18.SheetRequest<dynamic> request;
+
+  final dynamic Function(_i18.SheetResponse<dynamic>) completer;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "request": "$request", "completer": "$completer"}';
+  }
+
+  @override
+  bool operator ==(covariant LanguageViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key &&
+        other.request == request &&
+        other.completer == completer;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ request.hashCode ^ completer.hashCode;
   }
 }
 
@@ -469,14 +503,19 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToLanguageView([
+  Future<dynamic> navigateToLanguageView({
+    _i17.Key? key,
+    required _i18.SheetRequest<dynamic> request,
+    required dynamic Function(_i18.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.languageView,
+        arguments: LanguageViewArguments(
+            key: key, request: request, completer: completer),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -682,14 +721,19 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithLanguageView([
+  Future<dynamic> replaceWithLanguageView({
+    _i17.Key? key,
+    required _i18.SheetRequest<dynamic> request,
+    required dynamic Function(_i18.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.languageView,
+        arguments: LanguageViewArguments(
+            key: key, request: request, completer: completer),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

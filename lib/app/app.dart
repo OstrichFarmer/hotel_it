@@ -33,9 +33,14 @@ import 'package:stacked/stacked_annotations.dart';
     AdaptiveRoute(page: AboutUsView),
     AdaptiveRoute(page: PrivacyView),
     AdaptiveRoute(page: LanguageView),
+   
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
+    LazySingleton(classType: BottomSheetService),
+  ],
+  bottomsheets: [
+    StackedBottomsheet(classType: LanguageView),
   ],
   logger: StackedLogger(),
 )

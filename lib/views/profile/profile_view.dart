@@ -47,7 +47,7 @@ class ProfileView extends StatelessWidget {
                 verticalSpaceTwenty,
                 ScreenTile(
                   onTap: () {
-                    model.goToLanguageView();
+                    model.showSelectLanguageBottomSheet(context);
                   },
                   icon: Icons.language_outlined,
                   text: "Language",

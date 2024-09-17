@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hotel_it/app/app.bottomsheets.dart';
 import 'package:hotel_it/app/app.locator.dart';
 import 'package:hotel_it/app/app.router.dart';
 import 'package:hotel_it/services/theme/theme.dart';
@@ -9,6 +10,7 @@ import 'package:stacked_services/stacked_services.dart';
 
 void main() async {
   await setupLocator();
+  setupBottomSheetUi();
   runApp(const MyApp());
 }
 

@@ -26,13 +26,13 @@ class ScreenTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5.sp),
                 color: Theme.of(context).colorScheme.onSecondaryFixed,
               ),
-              width: 30.sp,
-              height: 30.sp,
+              width: 30.w,
+              height: 30.h,
               padding: EdgeInsets.only(
                   left: 5.sp, bottom: 5.sp, top: 5.sp, right: 5.sp),
               child: Icon(
                 icon,
-                size: 20.sp,
+                size: 20.h,
                 color: Theme.of(context).colorScheme.onSecondaryContainer,
               )),
           horizontalSpaceSmall,

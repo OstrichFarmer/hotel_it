@@ -4,6 +4,7 @@ import 'package:hotel_it/common/app_strings.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/common/ui_helpers.dart';
 import 'package:hotel_it/views/contact/contact_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/custom_text_field.dart';
 import 'package:stacked/stacked.dart';
 
@@ -50,7 +51,9 @@ class ContactView extends StatelessWidget {
                     verticalSpaceTiny,
                     const CustomTextField(title: 'Phone number'),
                     verticalSpaceTiny,
-                    const CustomTextField(title: 'Let us know how we can help')
+                    const CustomTextField(title: 'Let us know how we can help'),
+                    verticalSpaceSmall,
+                    CustomButton(title: "SUBMIT", onpressed: () {})
                   ],
                 ),
               ),
