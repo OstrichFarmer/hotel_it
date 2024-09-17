@@ -18,6 +18,7 @@ class MainView extends StatelessWidget {
       ) {
         return Scaffold(
           backgroundColor: Colors.transparent,
+          resizeToAvoidBottomInset: true,
           body: Stack(
             children: [
               // Main content

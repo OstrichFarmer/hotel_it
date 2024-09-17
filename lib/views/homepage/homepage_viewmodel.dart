@@ -10,6 +10,23 @@ class HomePageViewModel extends BaseViewModel {
   String? get selectedCheckInDate => _selectedCheckInDate;
   String? get selectedCheckOutDate => _selectedCheckOutDate;
 
+  final List<String> countries = [
+    'Abia',
+    'Adamawa',
+    'Akwa Ibom',
+    'Anambra',
+    'Bauchi',
+    'Bayelsa',
+    'Benue',
+    'Borno',
+  ];
+  String? selectedValue;
+
+  void onchanged(String? value) {
+    selectedValue = value;
+    notifyListeners();
+  }
+
   void selectCheckInDate(String date) {
     _selectedCheckInDate = date;
     notifyListeners();
