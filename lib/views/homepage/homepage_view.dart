@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +6,6 @@ import 'package:hotel_it/data/recent_vacation.dart';
 import 'package:hotel_it/views/homepage/homepage_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/date_dropdown.dart';
-import 'package:hotel_it/widgets/location_textfield.dart';
 import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:stacked/stacked.dart';
 
@@ -24,6 +24,7 @@ class HomePageView extends StatelessWidget {
         return GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Scaffold(
+            resizeToAvoidBottomInset: true,
             backgroundColor: Colors.white,
             appBar: AppBar(
               centerTitle: true,
@@ -65,9 +66,62 @@ class HomePageView extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          const LocationTextfield(),
+                          Container(
+                            padding: EdgeInsets.only(left: 10.w),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(5.r),
+                                ),
+                                border: Border.all()),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton2<String>(
+                                isExpanded: true,
+                                hint: Text(
+                                  "Select Country",
+                                  style: GoogleFonts.raleway(),
+                                ),
+                                items: model.countries
+                                    .map((String country) =>
+                                        DropdownMenuItem<String>(
+                                            value: country,
+                                            child: Text(
+                                              country,
+                                              style: GoogleFonts.raleway(),
+                                              overflow: TextOverflow.ellipsis,
+                                            )))
+                                    .toList(),
+                                value: model.selectedValue,
+                                onChanged: model.onchanged,
+                                iconStyleData: IconStyleData(
+                                  icon: const Icon(
+                                    Icons.location_on_outlined,
+                                  ),
+                                  iconSize: 34,
+                                  iconEnabledColor: Theme.of(context)
+                                      .colorScheme
+                                      .onSecondaryFixed,
+                                  iconDisabledColor: Colors.grey,
+                                ),
+                                dropdownStyleData: DropdownStyleData(
+                                  maxHeight: 300,
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(14.r),
+                                  ),
+                                  offset: const Offset(0, -10),
+                                  scrollbarTheme: ScrollbarThemeData(
+                                    radius: const Radius.circular(40),
+                                    thickness:
+                                        WidgetStateProperty.all<double>(6),
+                                    thumbVisibility:
+                                        WidgetStateProperty.all<bool>(true),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
                           SizedBox(
-                            height: 5.h,
+                            height: 10.h,
                           ),
                           Row(
                             children: [
