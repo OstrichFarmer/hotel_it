@@ -35,4 +35,8 @@ class ProfileViewModel extends BaseViewModel {
   void goToPrivacyPolicyView() {
     _navigationService.navigateTo(Routes.privacyView);
   }
+
+  void goBack() {
+    _navigationService.back();
+  }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/common/ui_helpers.dart';
+import 'package:hotel_it/widgets/screen_tile.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class LanguageView extends StatelessWidget {
@@ -29,7 +30,7 @@ class LanguageView extends StatelessWidget {
         Center(
           child: Container(
             width: 350.w,
-            height: 255.h,
+            height: 245.h,
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
@@ -37,37 +38,45 @@ class LanguageView extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text(
-                  "Select Language",
-                  style:
-                      w600Style(16, Theme.of(context).colorScheme.onSecondary),
+                Row(
+                  children: [
+                    horizontalSpaceTiny,
+                    Text(
+                      "Select Language",
+                      style: w700Style(
+                          22, Theme.of(context).colorScheme.onSurface),
+                    ),
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        elevation: 8,
+                        shape: const CircleBorder(),
+                      ),
+                      child: Icon(
+                        Icons.close,
+                        size: 16,
+                        color:
+                            Theme.of(context).colorScheme.onSecondaryContainer,
+                      ),
+                    ),
+                  ],
                 ),
                 verticalSpaceTwenty,
-                TextButton(
-                  onPressed: () {
-                    completer(SheetResponse(confirmed: true, data: 'English'));
-                  },
-                  child: Text(
-                    "English",
-                    style: w400Style(
-                      15,
-                      Theme.of(context).colorScheme.onSecondary,
-                    ),
-                  ),
-                ),
+                ScreenTile(
+                    onTap: () {
+                      completer(
+                          SheetResponse(confirmed: true, data: 'English'));
+                    },
+                    icon: Icons.close,
+                    text: "English"),
                 verticalSpaceSmall,
-                TextButton(
-                  onPressed: () {
-                    completer(SheetResponse(confirmed: true, data: 'Arabic'));
-                  },
-                  child: Text(
-                    "Arabic",
-                    style: w400Style(
-                      15,
-                      Theme.of(context).colorScheme.onSecondary,
-                    ),
-                  ),
-                ),
+                ScreenTile(
+                    onTap: () {
+                      completer(SheetResponse(confirmed: true, data: 'Arabic'));
+                    },
+                    icon: Icons.mail,
+                    text: "Arabic")
               ],
             ),
           ),
