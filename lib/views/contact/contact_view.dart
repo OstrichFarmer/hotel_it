@@ -37,7 +37,7 @@ class ContactView extends StatelessWidget {
                     Text(
                       ksContactRequest,
                       style: w400Style(
-                          17, Theme.of(context).colorScheme.onSurfaceVariant),
+                          12, Theme.of(context).colorScheme.onSurfaceVariant),
                     ),
                     verticalSpaceSmall,
                     const CustomTextField(title: 'Name'),
@@ -93,7 +93,7 @@ class DashedRectangle extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.file_upload_outlined,
-                  size: 17.h, color: Theme.of(context).colorScheme.outline),
+                  size: 24.h, color: Theme.of(context).colorScheme.outline),
               horizontalSpaceTiny,
               Text(
                 "Upload Additional file",

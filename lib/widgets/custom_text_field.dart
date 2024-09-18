@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:hotel_it/common/custom_textstyles.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -17,7 +17,8 @@ class CustomTextField extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.poppins(fontSize: 15.sp),
+            style:
+                w400Style(15.sp, Theme.of(context).colorScheme.onTertiaryFixed),
           ),
           TextField(
             decoration: InputDecoration(
