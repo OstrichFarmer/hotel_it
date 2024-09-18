@@ -31,6 +31,14 @@ class SearchView extends StatelessWidget {
             ),
             body: Column(
               children: [
+                ElevatedButton(
+                    onPressed: () {
+                      model.goToDetails();
+                    },
+                    child: Text(
+                      "Go to details",
+                      style: GoogleFonts.aBeeZee(color: Colors.red),
+                    )),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: TextField(
