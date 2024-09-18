@@ -47,14 +47,26 @@ class LanguageView extends StatelessWidget {
                   onPressed: () {
                     completer(SheetResponse(confirmed: true, data: 'English'));
                   },
-                  child: Text("English"),
+                  child: Text(
+                    "English",
+                    style: w400Style(
+                      15,
+                      Theme.of(context).colorScheme.onSecondary,
+                    ),
+                  ),
                 ),
                 verticalSpaceSmall,
                 TextButton(
                   onPressed: () {
                     completer(SheetResponse(confirmed: true, data: 'Arabic'));
                   },
-                  child: Text("Arabic"),
+                  child: Text(
+                    "Arabic",
+                    style: w400Style(
+                      15,
+                      Theme.of(context).colorScheme.onSecondary,
+                    ),
+                  ),
                 ),
               ],
             ),

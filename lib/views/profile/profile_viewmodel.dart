@@ -13,9 +13,7 @@ class ProfileViewModel extends BaseViewModel {
       variant: BottomSheetType.languageView,
     );
 
-    if (response != null && response.confirmed) {
-      print('Selected language: ${response.data}');
-    }
+    if (response != null && response.confirmed) {}
   }
 
   void goToContactView() {
