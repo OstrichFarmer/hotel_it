@@ -1,6 +1,7 @@
 import 'package:hotel_it/views/confirm_email/confirm_email_view.dart';
 import 'package:hotel_it/views/contact/contact_view.dart';
 import 'package:hotel_it/views/homepage/homepage_view.dart';
+import 'package:hotel_it/views/hotel_detail/hotel_detail_view.dart';
 import 'package:hotel_it/views/main_view/main_view.dart';
 import 'package:hotel_it/views/onboarding/onboarding_view.dart';
 import 'package:hotel_it/views/auth/auth_view.dart';
@@ -35,6 +36,7 @@ import 'package:stacked/stacked_annotations.dart';
     AdaptiveRoute(page: AboutUsView),
     AdaptiveRoute(page: PrivacyView),
     AdaptiveRoute(page: LanguageView),
+    AdaptiveRoute(page: HotelDetailView),
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
