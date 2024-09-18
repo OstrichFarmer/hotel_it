@@ -13,6 +13,7 @@ final lightTheme = ThemeData(
       onSurfaceVariant: const Color(0xFF5C5752),
       onSecondaryFixed: const Color(0xFF109A27),
       onSecondaryContainer: const Color(0xFFFEFEFE),
+      outline: const Color(0xFFDCDCDC),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,
@@ -32,6 +33,7 @@ final darkTheme = ThemeData(
       onSurfaceVariant: const Color(0xFFFFFFFF),
       onSecondaryFixed: const Color(0xFF12B12D),
       onSecondaryContainer: const Color(0xFF0E0E0E),
+      outline: const Color(0XFF303030),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.black,

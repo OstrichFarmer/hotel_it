@@ -28,7 +28,7 @@ class ProfileView extends StatelessWidget {
             centerTitle: true,
           ),
           body: Padding(
-            padding: EdgeInsets.only(left: 20.w, right: 20.w),
+            padding: EdgeInsets.only(left: 15.w, right: 15.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
