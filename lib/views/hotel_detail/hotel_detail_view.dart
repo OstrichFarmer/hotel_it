@@ -69,7 +69,35 @@ class HotelDetailView extends StatelessWidget {
                           fontSize: 16.sp, fontWeight: FontWeight.w600),
                     )
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on_outlined,
+                          size: 26.h,
+                          color: Theme.of(context).colorScheme.onSecondaryFixed,
+                        ),
+                        Text(
+                          "Lagos, Victoria Island",
+                          style: GoogleFonts.plusJakartaSans(
+                            fontSize: 14.sp,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      "/day",
+                      style: GoogleFonts.plusJakartaSans(
+                          fontSize: 16.sp, fontWeight: FontWeight.w400),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
