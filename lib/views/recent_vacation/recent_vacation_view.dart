@@ -56,7 +56,7 @@ class RecentVacationView extends StatelessWidget {
                         },
                         separatorBuilder: (BuildContext context, index) {
                           return SizedBox(
-                            height: 20..h,
+                            height: 20.h,
                           );
                         },
                         itemCount: recentVacations.length),

@@ -19,34 +19,46 @@ class ScreenTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Row(
-        children: [
-          Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.sp),
+      child: Container(
+        width: 350.w,
+        height: 60.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+              color: Theme.of(context).colorScheme.outline, width: 1),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+          child: Row(
+            children: [
+              Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.sp),
+                    color: Theme.of(context).colorScheme.onSecondaryFixed,
+                  ),
+                  width: 30.w,
+                  height: 30.h,
+                  padding: EdgeInsets.only(
+                      left: 5.sp, bottom: 5.sp, top: 5.sp, right: 5.sp),
+                  child: Icon(
+                    icon,
+                    size: 20.h,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                  )),
+              horizontalSpaceSmall,
+              Text(
+                text,
+                style: w600Style(14, Theme.of(context).colorScheme.onSurface),
+              ),
+              const Spacer(),
+              Icon(
+                Icons.arrow_forward,
+                size: 17.sp,
                 color: Theme.of(context).colorScheme.onSecondaryFixed,
               ),
-              width: 30.sp,
-              height: 30.sp,
-              padding: EdgeInsets.only(
-                  left: 5.sp, bottom: 5.sp, top: 5.sp, right: 5.sp),
-              child: Icon(
-                icon,
-                size: 20.sp,
-                color: Theme.of(context).colorScheme.onSecondaryContainer,
-              )),
-          horizontalSpaceSmall,
-          Text(
-            text,
-            style: w600Style(14, Theme.of(context).colorScheme.onSurface),
+            ],
           ),
-          const Spacer(),
-          Icon(
-            Icons.arrow_forward,
-            size: 17.sp,
-            color: Theme.of(context).colorScheme.onSecondaryFixed,
-          ),
-        ],
+        ),
       ),
     );
   }

@@ -40,6 +40,10 @@ import 'package:stacked/stacked_annotations.dart';
   ],
   dependencies: [
     LazySingleton(classType: NavigationService),
+    LazySingleton(classType: BottomSheetService),
+  ],
+  bottomsheets: [
+    StackedBottomsheet(classType: LanguageView),
   ],
   logger: StackedLogger(),
 )
