@@ -15,21 +15,60 @@ class SearchView extends StatelessWidget {
         SearchViewModel model,
         Widget? child,
       ) {
-        return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.primary,
-          appBar: AppBar(
+        return GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Scaffold(
             backgroundColor: Theme.of(context).colorScheme.primary,
-            centerTitle: true,
-            title: Text(
-              "Available Hotels",
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w500,
+            appBar: AppBar(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              centerTitle: true,
+              title: Text(
+                "Available Hotels",
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-          body: Center(
-            child: Text(
-              'SearchView',
+            body: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    onChanged: (value) => model.onSearchQueryChanged(value),
+                    decoration: InputDecoration(
+                      hintText: 'Search hotels...',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: model.filteredHotels.length,
+                    itemBuilder: (context, index) {
+                      final hotel = model.filteredHotels[index];
+                      return ListTile(
+                        leading: Image.asset(hotel.imageUrl,
+                            width: 50, height: 50, fit: BoxFit.cover),
+                        title: Text(hotel.name,
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w600)),
+                        subtitle: Text(hotel.location),
+                        trailing: Text('\$${hotel.price.toStringAsFixed(2)}'),
+                        onTap: () {
+                          // Handle hotel item tap here
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
         );
