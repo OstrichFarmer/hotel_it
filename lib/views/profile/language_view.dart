@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/common/ui_helpers.dart';
-import 'package:hotel_it/views/profile/profile_viewmodel.dart';
-import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class LanguageView extends StatelessWidget {
@@ -20,18 +18,6 @@ class LanguageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
-        viewModelBuilder: () => ProfileViewModel(),
-        builder: (
-          BuildContext context,
-          ProfileViewModel model,
-          Widget? child,
-        ) {
-          return _selectLanguage(context);
-        });
-  }
-
-  Widget _selectLanguage(BuildContext context) {
     return Stack(
       children: [
         BackdropFilter(
@@ -47,7 +33,7 @@ class LanguageView extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
-              borderRadius: BorderRadius.circular(5.r),
+              borderRadius: BorderRadius.circular(15.r),
             ),
             child: Column(
               children: [

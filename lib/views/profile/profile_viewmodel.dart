@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:hotel_it/app/app.bottomsheets.dart';
 import 'package:hotel_it/app/app.locator.dart';
 import 'package:hotel_it/app/app.router.dart';
@@ -9,12 +8,14 @@ class ProfileViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _bottomSheetService = locator<BottomSheetService>();
 
-  Future<void> showSelectLanguageBottomSheet(BuildContext context) async {
-    await _bottomSheetService.showCustomSheet(
-      title: "Select language",
+  Future<void> showLanguageSelectionBottomSheet() async {
+    var response = await _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.languageView,
-      data: ["English", "Arabic"],
     );
+
+    if (response != null && response.confirmed) {
+      print('Selected language: ${response.data}');
+    }
   }
 
   void goToContactView() {
