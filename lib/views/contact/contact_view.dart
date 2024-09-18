@@ -62,8 +62,9 @@ class ContactView extends StatelessWidget {
                       style: w400Style(10,
                           Theme.of(context).colorScheme.onTertiaryFixedVariant),
                     ),
-                    verticalSpaceFifteen,
-                    CustomButton(title: "SUBMIT", onpressed: () {})
+                    verticalSpaceMedium,
+                    CustomButton(title: "SUBMIT", onpressed: () {}),
+                    verticalSpaceSmall,
                   ],
                 ),
               ),
