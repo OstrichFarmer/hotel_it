@@ -84,7 +84,14 @@ class LanguageTile extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(left: 10.w, right: 10.w),
           child: Row(
-            children: [Container(decoration: BoxDecoration(border: Border.all(color: Theme.of(context).colorScheme.)),)],
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        color:
+                            Theme.of(context).colorScheme.onTertiaryContainer)),
+              )
+            ],
           ),
         ),
       ),
