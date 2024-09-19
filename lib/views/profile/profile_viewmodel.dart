@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:hotel_it/app/app.bottomsheets.dart';
 import 'package:hotel_it/app/app.locator.dart';
 import 'package:hotel_it/app/app.router.dart';
@@ -11,6 +12,7 @@ class ProfileViewModel extends BaseViewModel {
   Future<void> showLanguageSelectionBottomSheet() async {
     var response = await _bottomSheetService.showCustomSheet(
       variant: BottomSheetType.languageView,
+      barrierColor: Colors.transparent,
     );
 
     if (response != null && response.confirmed) {}
