@@ -300,7 +300,6 @@ class AuthViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i20.NavigationService {
 class LanguageViewArguments {
   const LanguageViewArguments({
     this.key,
@@ -308,11 +307,11 @@ class LanguageViewArguments {
     required this.completer,
   });
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
-  final _i19.SheetRequest<dynamic> request;
+  final _i20.SheetRequest<dynamic> request;
 
-  final dynamic Function(_i19.SheetResponse<dynamic>) completer;
+  final dynamic Function(_i20.SheetResponse<dynamic>) completer;
 
   @override
   String toString() {
@@ -333,7 +332,7 @@ class LanguageViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i19.NavigationService {
+extension NavigatorStateExtension on _i20.NavigationService {
   Future<dynamic> navigateToOnboardingView([
     int? routerId,
     bool preventDuplicates = true,
@@ -548,9 +547,9 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToLanguageView({
-    _i18.Key? key,
-    required _i19.SheetRequest<dynamic> request,
-    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
+    _i19.Key? key,
+    required _i20.SheetRequest<dynamic> request,
+    required dynamic Function(_i20.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -794,9 +793,9 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithLanguageView({
-    _i18.Key? key,
-    required _i19.SheetRequest<dynamic> request,
-    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
+    _i19.Key? key,
+    required _i20.SheetRequest<dynamic> request,
+    required dynamic Function(_i20.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
