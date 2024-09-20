@@ -8,6 +8,7 @@ import 'package:stacked_services/stacked_services.dart';
 class ProfileViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _bottomSheetService = locator<BottomSheetService>();
+  String? _selectedLanguage;
 
   Future<void> showLanguageSelectionBottomSheet() async {
     var response = await _bottomSheetService.showCustomSheet(
@@ -16,9 +17,12 @@ class ProfileViewModel extends BaseViewModel {
     );
 
     if (response != null && response.confirmed) {
-       String selectedLanguage = response.data;
+      _selectedLanguage = response.data;
+      notifyListeners();
     }
   }
+
+  String get selectedLanguage => _selectedLanguage ?? 'English';
 
   void goToContactView() {
     _navigationService.navigateTo(Routes.contactView);

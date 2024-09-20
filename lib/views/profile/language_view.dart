@@ -21,6 +21,7 @@ class LanguageView extends StatefulWidget {
 
 class _LanguageViewState extends State<LanguageView> {
   String? selectedLanguage = 'English';
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -34,8 +35,8 @@ class _LanguageViewState extends State<LanguageView> {
         Center(
           child: Container(
             width: 350.w,
-            height: 250.h,
-            padding: EdgeInsets.only(left: 10.w, right: 10.w),
+            height: 240.h,
+            padding: EdgeInsets.all(10.w),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Theme.of(context).colorScheme.outline,
@@ -46,7 +47,7 @@ class _LanguageViewState extends State<LanguageView> {
             ),
             child: Column(
               children: [
-                verticalSpaceFifteen,
+                verticalSpaceSmall,
                 Row(
                   children: [
                     horizontalSpaceSmall,
@@ -56,104 +57,85 @@ class _LanguageViewState extends State<LanguageView> {
                           22, Theme.of(context).colorScheme.onSurface),
                     ),
                     const Spacer(),
-                    ElevatedButton(
-                      onPressed: () {
-                        widget.completer(SheetResponse(confirmed: false));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.onSecondaryContainer,
-                        elevation: 0,
-                        shape: const CircleBorder(),
-                      ),
-                      child: Icon(
-                        Icons.close,
-                        size: 16,
-                        color:
-                            Theme.of(context).colorScheme.onSecondaryContainer,
+                    Material(
+                      elevation: 2.0,
+                      shape: const CircleBorder(),
+                      child: IconButton(
+                        onPressed: () {
+                          widget.completer(SheetResponse(confirmed: false));
+                        },
+                        icon: Icon(
+                          Icons.close,
+                          size: 24,
+                          color: Theme.of(context).colorScheme.onSecondaryFixed,
+                        ),
                       ),
                     ),
                   ],
                 ),
                 verticalSpaceMedium,
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedLanguage = 'English';
-                    });
-                    widget.completer(
-                        SheetResponse(confirmed: true, data: 'English'));
-                  },
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/images/uk_flag.png',
-                        width: 30,
-                        height: 20,
-                      ),
-                      horizontalSpaceSmall,
-                      Text(
-                        'English',
-                        style: w700Style(
-                            16, Theme.of(context).colorScheme.onSurface),
-                      ),
-                      const Spacer(),
-                      Radio<String>(
-                        value: 'English',
-                        groupValue: selectedLanguage,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedLanguage = value;
-                          });
-                          widget.completer(
-                              SheetResponse(confirmed: true, data: 'English'));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+                _languageOption('English', 'assets/images/uk_flag.png'),
                 verticalSpaceTwenty,
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedLanguage = 'Arabic';
-                    });
-                    widget.completer(
-                        SheetResponse(confirmed: true, data: 'Arabic'));
-                  },
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        'assets/images/qa_flag.png',
-                        width: 30,
-                        height: 30,
-                      ),
-                      horizontalSpaceSmall,
-                      Text(
-                        'Arabic',
-                        style: w700Style(
-                            16, Theme.of(context).colorScheme.onSurface),
-                      ),
-                      const Spacer(),
-                      Radio<String>(
-                        value: 'Arabic',
-                        groupValue: selectedLanguage,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedLanguage = value;
-                          });
-                          widget.completer(
-                              SheetResponse(confirmed: true, data: 'Arabic'));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+                _languageOption('Arabic', 'assets/images/qa_flag.png'),
               ],
             ),
           ),
         ),
       ],
+    );
+  }
+
+  Widget _languageOption(String language, String flagPath) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedLanguage = language;
+        });
+        widget.completer(SheetResponse(confirmed: true, data: language));
+      },
+      child: Container(
+        height: 50.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(
+              color: Theme.of(context).colorScheme.outline, width: 1),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+          child: Row(
+            children: [
+              Image.asset(
+                flagPath,
+                width: 30,
+                height: 20,
+              ),
+              horizontalSpaceSmall,
+              Text(
+                language,
+                style: w700Style(16, Theme.of(context).colorScheme.onSurface),
+              ),
+              const Spacer(),
+              Theme(
+                data: Theme.of(context).copyWith(
+                    unselectedWidgetColor:
+                        Theme.of(context).colorScheme.onTertiaryFixedVariant),
+                child: Radio<String>(
+                  value: language,
+                  groupValue: selectedLanguage,
+                  activeColor: Theme.of(context).colorScheme.onSecondaryFixed,
+                  onChanged: (value) {
+                    setState(() {
+                      selectedLanguage = value;
+                    });
+                    widget.completer(
+                        SheetResponse(confirmed: true, data: language));
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
