@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/views/hotel_detail/hotel_detail_viewmodel.dart';
+import 'package:hotel_it/widgets/cascading_circle_avatar.dart';
 import 'package:stacked/stacked.dart';
 
 class HotelDetailView extends StatelessWidget {
@@ -95,9 +96,22 @@ class HotelDetailView extends StatelessWidget {
                       "/day",
                       style: GoogleFonts.plusJakartaSans(
                           fontSize: 16.sp, fontWeight: FontWeight.w400),
-                    )
+                    ),
                   ],
                 ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Container(
+                  height: 80.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                    border: Border.all(
+                        color: Theme.of(context).colorScheme.onSurface),
+                  ),
+                ),
+                CascadingAvatars()
               ],
             ),
           ),
