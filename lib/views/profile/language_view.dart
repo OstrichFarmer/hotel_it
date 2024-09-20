@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hotel_it/common/custom_textstyles.dart';
 import 'package:hotel_it/common/ui_helpers.dart';
-import 'package:hotel_it/widgets/screen_tile.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-class LanguageView extends StatelessWidget {
+class LanguageView extends StatefulWidget {
   final SheetRequest request;
   final Function(SheetResponse) completer;
 
@@ -16,6 +15,12 @@ class LanguageView extends StatelessWidget {
     required this.completer,
   });
 
+  @override
+  State<LanguageView> createState() => _LanguageViewState();
+}
+
+class _LanguageViewState extends State<LanguageView> {
+  String? selectedLanguage = 'English';
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -53,7 +58,7 @@ class LanguageView extends StatelessWidget {
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {
-                        completer(SheetResponse(confirmed: false));
+                        widget.completer(SheetResponse(confirmed: false));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
@@ -71,20 +76,79 @@ class LanguageView extends StatelessWidget {
                   ],
                 ),
                 verticalSpaceMedium,
-                ScreenTile(
+                GestureDetector(
                   onTap: () {
-                    completer(SheetResponse(confirmed: true, data: 'English'));
+                    setState(() {
+                      selectedLanguage = 'English';
+                    });
+                    widget.completer(
+                        SheetResponse(confirmed: true, data: 'English'));
                   },
-                  icon: Icons.language,
-                  text: "English",
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/flags/english_flag.png',
+                        width: 30,
+                        height: 20,
+                      ),
+                      horizontalSpaceSmall,
+                      Text(
+                        'English',
+                        style: w700Style(
+                            16, Theme.of(context).colorScheme.onSurface),
+                      ),
+                      const Spacer(),
+                      Radio<String>(
+                        value: 'English',
+                        groupValue: selectedLanguage,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedLanguage = value;
+                          });
+                          widget.completer(
+                              SheetResponse(confirmed: true, data: 'English'));
+                        },
+                      ),
+                    ],
+                  ),
                 ),
                 verticalSpaceTwenty,
-                ScreenTile(
+                GestureDetector(
                   onTap: () {
-                    completer(SheetResponse(confirmed: true, data: 'Arabic'));
+                    setState(() {
+                      selectedLanguage = 'Arabic';
+                    });
+                    widget.completer(
+                        SheetResponse(confirmed: true, data: 'Arabic'));
                   },
-                  icon: Icons.language,
-                  text: "Arabic",
+                  child: Row(
+                    children: [
+                      // Flag Image (replace with actual flag path)
+                      Image.asset(
+                        'assets/flags/arabic_flag.png',
+                        width: 30,
+                        height: 30,
+                      ),
+                      horizontalSpaceSmall,
+                      Text(
+                        'Arabic',
+                        style: w700Style(
+                            16, Theme.of(context).colorScheme.onSurface),
+                      ),
+                      const Spacer(),
+                      Radio<String>(
+                        value: 'Arabic',
+                        groupValue: selectedLanguage,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedLanguage = value;
+                          });
+                          widget.completer(
+                              SheetResponse(confirmed: true, data: 'Arabic'));
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

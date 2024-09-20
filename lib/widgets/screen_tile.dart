@@ -63,38 +63,3 @@ class ScreenTile extends StatelessWidget {
     );
   }
 }
-
-class LanguageTile extends StatelessWidget {
-  const LanguageTile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        height: 60.h,
-        width: 350.w,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(
-            color: Theme.of(context).colorScheme.onSecondaryFixed,
-            width: 1,
-          ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 10.w, right: 10.w),
-          child: Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    border: Border.all(
-                        color:
-                            Theme.of(context).colorScheme.onTertiaryContainer)),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
