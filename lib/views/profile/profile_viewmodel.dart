@@ -15,7 +15,9 @@ class ProfileViewModel extends BaseViewModel {
       barrierColor: Colors.transparent,
     );
 
-    if (response != null && response.confirmed) {}
+    if (response != null && response.confirmed) {
+       String selectedLanguage = response.data;
+    }
   }
 
   void goToContactView() {

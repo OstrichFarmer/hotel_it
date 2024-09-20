@@ -87,7 +87,7 @@ class _LanguageViewState extends State<LanguageView> {
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/flags/english_flag.png',
+                        'assets/images/uk_flag.png',
                         width: 30,
                         height: 20,
                       ),
@@ -123,9 +123,8 @@ class _LanguageViewState extends State<LanguageView> {
                   },
                   child: Row(
                     children: [
-                      // Flag Image (replace with actual flag path)
                       Image.asset(
-                        'assets/flags/arabic_flag.png',
+                        'assets/images/qa_flag.png',
                         width: 30,
                         height: 30,
                       ),
