@@ -110,8 +110,63 @@ class HotelDetailView extends StatelessWidget {
                     border: Border.all(
                         color: Theme.of(context).colorScheme.onSurface),
                   ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Reviews",
+                                style: GoogleFonts.plusJakartaSans(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16.sp),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  const Icon(
+                                    Icons.star,
+                                    color: Colors.green,
+                                  ),
+                                  Text(
+                                    "4.5",
+                                    style: GoogleFonts.plusJakartaSans(
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  Text(
+                                    "|",
+                                    style: GoogleFonts.plusJakartaSans(
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    "620 reviews",
+                                    style: GoogleFonts.plusJakartaSans(
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(child: CascadingAvatars()),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                CascadingAvatars()
               ],
             ),
           ),
