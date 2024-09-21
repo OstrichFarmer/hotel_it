@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/views/hotel_detail/hotel_detail_viewmodel.dart';
 import 'package:hotel_it/widgets/cascading_circle_avatar.dart';
+import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:stacked/stacked.dart';
 
 class HotelDetailView extends StatelessWidget {
@@ -21,9 +23,14 @@ class HotelDetailView extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.primary,
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.primary,
-            leading: Icon(
-              Icons.chevron_left,
-              size: 27.h,
+            leading: IconButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              icon: Icon(
+                Icons.chevron_left,
+                size: 27.h,
+              ),
             ),
             centerTitle: true,
             title: Text(
@@ -167,6 +174,59 @@ class HotelDetailView extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                SizedBox(
+                  height: 105.h,
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "About",
+                        style: GoogleFonts.plusJakartaSans(
+                          fontSize: 17.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      RichText(
+                        text: TextSpan(
+                          text:
+                              "This is a generated text This is a generated text This is a generated text This is a generated text This is a generated text...",
+                          style: GoogleFonts.plusJakartaSans(
+                            fontSize: 14.sp,
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: " Read more",
+                              style: GoogleFonts.plusJakartaSans(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSecondaryFixed,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  // Navigate to another page with full details
+                                },
+                            ),
+                          ],
+                        ),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                    ],
+                  ),
+                ),
+                CustomButton(
+                  title: "Book a Room",
+                  onpressed: () {},
+                )
               ],
             ),
           ),
