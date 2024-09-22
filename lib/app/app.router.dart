@@ -259,8 +259,17 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i18.HotelDetailView: (data) {
+      final args = data.getArgs<HotelDetailViewArguments>(nullOk: false);
       return _i1.buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const _i18.HotelDetailView(),
+        builder: (context) => _i18.HotelDetailView(
+            key: args.key,
+            name: args.name,
+            imageUrl: args.imageUrl,
+            description: args.description,
+            location: args.location,
+            price: args.price,
+            averageRating: args.averageRating,
+            numberOfReviews: args.numberOfReviews),
         settings: data,
       );
     },
@@ -329,6 +338,65 @@ class LanguageViewArguments {
   @override
   int get hashCode {
     return key.hashCode ^ request.hashCode ^ completer.hashCode;
+  }
+}
+
+class HotelDetailViewArguments {
+  const HotelDetailViewArguments({
+    this.key,
+    required this.name,
+    required this.imageUrl,
+    required this.description,
+    required this.location,
+    required this.price,
+    required this.averageRating,
+    required this.numberOfReviews,
+  });
+
+  final _i19.Key? key;
+
+  final String name;
+
+  final String imageUrl;
+
+  final String description;
+
+  final String location;
+
+  final double price;
+
+  final double averageRating;
+
+  final int numberOfReviews;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "name": "$name", "imageUrl": "$imageUrl", "description": "$description", "location": "$location", "price": "$price", "averageRating": "$averageRating", "numberOfReviews": "$numberOfReviews"}';
+  }
+
+  @override
+  bool operator ==(covariant HotelDetailViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key &&
+        other.name == name &&
+        other.imageUrl == imageUrl &&
+        other.description == description &&
+        other.location == location &&
+        other.price == price &&
+        other.averageRating == averageRating &&
+        other.numberOfReviews == numberOfReviews;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^
+        name.hashCode ^
+        imageUrl.hashCode ^
+        description.hashCode ^
+        location.hashCode ^
+        price.hashCode ^
+        averageRating.hashCode ^
+        numberOfReviews.hashCode;
   }
 }
 
@@ -565,14 +633,31 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToHotelDetailView([
+  Future<dynamic> navigateToHotelDetailView({
+    _i19.Key? key,
+    required String name,
+    required String imageUrl,
+    required String description,
+    required String location,
+    required double price,
+    required double averageRating,
+    required int numberOfReviews,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.hotelDetailView,
+        arguments: HotelDetailViewArguments(
+            key: key,
+            name: name,
+            imageUrl: imageUrl,
+            description: description,
+            location: location,
+            price: price,
+            averageRating: averageRating,
+            numberOfReviews: numberOfReviews),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -811,14 +896,31 @@ extension NavigatorStateExtension on _i20.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHotelDetailView([
+  Future<dynamic> replaceWithHotelDetailView({
+    _i19.Key? key,
+    required String name,
+    required String imageUrl,
+    required String description,
+    required String location,
+    required double price,
+    required double averageRating,
+    required int numberOfReviews,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.hotelDetailView,
+        arguments: HotelDetailViewArguments(
+            key: key,
+            name: name,
+            imageUrl: imageUrl,
+            description: description,
+            location: location,
+            price: price,
+            averageRating: averageRating,
+            numberOfReviews: numberOfReviews),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

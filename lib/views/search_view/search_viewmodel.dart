@@ -32,7 +32,22 @@ class SearchViewModel extends BaseViewModel {
     }
   }
 
-  void goToDetails() {
-    _navigationService.navigateTo(Routes.hotelDetailView);
+  void goToDetails(
+      {required String name,
+      required imageUrl,
+      required description,
+      required location,
+      required price,
+      required averageRating,
+      required numberOfReviews}) {
+    _navigationService.navigateTo(Routes.hotelDetailView,
+        arguments: HotelDetailViewArguments(
+            name: name,
+            imageUrl: imageUrl,
+            description: description,
+            location: location,
+            price: price,
+            averageRating: averageRating,
+            numberOfReviews: numberOfReviews));
   }
 }

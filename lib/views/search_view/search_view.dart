@@ -31,14 +31,6 @@ class SearchView extends StatelessWidget {
             ),
             body: Column(
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      model.goToDetails();
-                    },
-                    child: Text(
-                      "Go to details",
-                      style: GoogleFonts.aBeeZee(color: Colors.red),
-                    )),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: TextField(
@@ -71,6 +63,14 @@ class SearchView extends StatelessWidget {
                         trailing: Text('\$${hotel.price.toStringAsFixed(2)}'),
                         onTap: () {
                           // Handle hotel item tap here
+                          model.goToDetails(
+                              name: hotel.name,
+                              imageUrl: hotel.imageUrl,
+                              description: hotel.description,
+                              location: hotel.location,
+                              price: hotel.price,
+                              averageRating: hotel.averageRating,
+                              numberOfReviews: hotel.numberOfReviews);
                         },
                       );
                     },

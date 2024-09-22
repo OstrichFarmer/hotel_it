@@ -8,7 +8,24 @@ import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:stacked/stacked.dart';
 
 class HotelDetailView extends StatelessWidget {
-  const HotelDetailView({super.key});
+  const HotelDetailView({
+    super.key,
+    required this.name,
+    required this.imageUrl,
+    required this.description,
+    required this.location,
+    required this.price,
+    required this.averageRating,
+    required this.numberOfReviews,
+  });
+
+  final String name;
+  final String imageUrl;
+  final String description;
+  final String location;
+  final double price;
+  final double averageRating;
+  final int numberOfReviews;
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +71,9 @@ class HotelDetailView extends StatelessWidget {
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                    image: const DecorationImage(
+                    image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/hotel5.png"),
+                      image: AssetImage(imageUrl),
                     ),
                   ),
                 ),
@@ -67,12 +84,12 @@ class HotelDetailView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Lagos Continental Hotel",
+                      name,
                       style: GoogleFonts.plusJakartaSans(
                           fontSize: 16.sp, fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      "\$200",
+                      "\$$price",
                       style: GoogleFonts.plusJakartaSans(
                           fontSize: 16.sp, fontWeight: FontWeight.w600),
                     )
@@ -92,7 +109,7 @@ class HotelDetailView extends StatelessWidget {
                           color: Theme.of(context).colorScheme.onSecondaryFixed,
                         ),
                         Text(
-                          "Lagos, Victoria Island",
+                          location,
                           style: GoogleFonts.plusJakartaSans(
                             fontSize: 14.sp,
                           ),
@@ -143,7 +160,7 @@ class HotelDetailView extends StatelessWidget {
                                     color: Colors.green,
                                   ),
                                   Text(
-                                    "4.5",
+                                    averageRating.toString(),
                                     style: GoogleFonts.plusJakartaSans(
                                         fontWeight: FontWeight.w500),
                                   ),
@@ -153,7 +170,7 @@ class HotelDetailView extends StatelessWidget {
                                         fontWeight: FontWeight.w600),
                                   ),
                                   Text(
-                                    "620 reviews",
+                                    "$numberOfReviews reviews",
                                     style: GoogleFonts.plusJakartaSans(
                                         fontWeight: FontWeight.w500),
                                   )
@@ -190,33 +207,8 @@ class HotelDetailView extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      RichText(
-                        text: TextSpan(
-                          text:
-                              "This is a generated text This is a generated text This is a generated text This is a generated text This is a generated text...",
-                          style: GoogleFonts.plusJakartaSans(
-                            fontSize: 14.sp,
-                            color: Theme.of(context).colorScheme.onBackground,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: " Read more",
-                              style: GoogleFonts.plusJakartaSans(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .onSecondaryFixed,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  // Navigate to another page with full details
-                                },
-                            ),
-                          ],
-                        ),
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      // Handle the description and Read more logic
+                      _buildDescription(context),
                       SizedBox(
                         height: 20.h,
                       ),
@@ -232,6 +224,44 @@ class HotelDetailView extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  // Helper function to build description with read more
+  Widget _buildDescription(BuildContext context) {
+    const int descriptionPreviewLength = 100; // Set preview length limit
+
+    // Check if description is longer than preview length
+    bool isLongDescription = description.length > descriptionPreviewLength;
+
+    // Trimmed description for preview
+    String previewText = isLongDescription
+        ? '${description.substring(0, descriptionPreviewLength)}...'
+        : description;
+
+    return RichText(
+      text: TextSpan(
+        text: previewText,
+        style: GoogleFonts.plusJakartaSans(
+          fontSize: 14.sp,
+          color: Theme.of(context).colorScheme.onBackground,
+        ),
+        children: isLongDescription
+            ? [
+                TextSpan(
+                  text: " Read more",
+                  style: GoogleFonts.plusJakartaSans(
+                    color: Theme.of(context).colorScheme.onSecondaryFixed,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      // Navigate to another page with full details
+                    },
+                ),
+              ]
+            : [],
+      ),
     );
   }
 }
