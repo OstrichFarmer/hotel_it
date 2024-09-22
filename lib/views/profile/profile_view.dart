@@ -33,10 +33,14 @@ class ProfileView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  radius: 37.w,
+                  radius: 40.w,
                   backgroundColor: Colors.lightGreen,
                 ),
-                const Text("Jane Doe"),
+                Text(
+                  "Jane Doe",
+                  style:
+                      w600Style(15, Theme.of(context).colorScheme.onSecondary),
+                ),
                 verticalSpaceMedium,
                 ScreenTile(
                   onTap: () {
