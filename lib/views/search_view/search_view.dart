@@ -63,6 +63,14 @@ class SearchView extends StatelessWidget {
                         trailing: Text('\$${hotel.price.toStringAsFixed(2)}'),
                         onTap: () {
                           // Handle hotel item tap here
+                          model.goToDetails(
+                              name: hotel.name,
+                              imageUrl: hotel.imageUrl,
+                              description: hotel.description,
+                              location: hotel.location,
+                              price: hotel.price,
+                              averageRating: hotel.averageRating,
+                              numberOfReviews: hotel.numberOfReviews);
                         },
                       );
                     },

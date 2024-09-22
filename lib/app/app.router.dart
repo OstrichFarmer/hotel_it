@@ -5,12 +5,13 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i18;
+import 'package:flutter/material.dart' as _i19;
 import 'package:flutter/material.dart';
 import 'package:hotel_it/views/auth/auth_view.dart' as _i3;
 import 'package:hotel_it/views/confirm_email/confirm_email_view.dart' as _i4;
 import 'package:hotel_it/views/contact/contact_view.dart' as _i12;
 import 'package:hotel_it/views/homepage/homepage_view.dart' as _i8;
+import 'package:hotel_it/views/hotel_detail/hotel_detail_view.dart' as _i18;
 import 'package:hotel_it/views/main_view/main_view.dart' as _i7;
 import 'package:hotel_it/views/onboarding/onboarding_view.dart' as _i2;
 import 'package:hotel_it/views/profile/about_us.dart' as _i15;
@@ -26,7 +27,7 @@ import 'package:hotel_it/views/success_view/success_view.dart' as _i6;
 import 'package:hotel_it/views/terms_and_conditions.dart/t_and_c_view.dart'
     as _i14;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i19;
+import 'package:stacked_services/stacked_services.dart' as _i20;
 
 class Routes {
   static const onboardingView = '/onboarding-view';
@@ -61,6 +62,8 @@ class Routes {
 
   static const languageView = '/language-view';
 
+  static const hotelDetailView = '/hotel-detail-view';
+
   static const all = <String>{
     onboardingView,
     authView,
@@ -78,6 +81,7 @@ class Routes {
     aboutUsView,
     privacyView,
     languageView,
+    hotelDetailView,
   };
 }
 
@@ -146,6 +150,10 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(
       Routes.languageView,
       page: _i17.LanguageView,
+    ),
+    _i1.RouteDef(
+      Routes.hotelDetailView,
+      page: _i18.HotelDetailView,
     ),
   ];
 
@@ -250,6 +258,21 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
+    _i18.HotelDetailView: (data) {
+      final args = data.getArgs<HotelDetailViewArguments>(nullOk: false);
+      return _i1.buildAdaptivePageRoute<dynamic>(
+        builder: (context) => _i18.HotelDetailView(
+            key: args.key,
+            name: args.name,
+            imageUrl: args.imageUrl,
+            description: args.description,
+            location: args.location,
+            price: args.price,
+            averageRating: args.averageRating,
+            numberOfReviews: args.numberOfReviews),
+        settings: data,
+      );
+    },
   };
 
   @override
@@ -265,7 +288,7 @@ class AuthViewArguments {
     required this.isSignIn,
   });
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
   final bool isSignIn;
 
@@ -293,11 +316,11 @@ class LanguageViewArguments {
     required this.completer,
   });
 
-  final _i18.Key? key;
+  final _i19.Key? key;
 
-  final _i19.SheetRequest<dynamic> request;
+  final _i20.SheetRequest<dynamic> request;
 
-  final dynamic Function(_i19.SheetResponse<dynamic>) completer;
+  final dynamic Function(_i20.SheetResponse<dynamic>) completer;
 
   @override
   String toString() {
@@ -318,7 +341,66 @@ class LanguageViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i19.NavigationService {
+class HotelDetailViewArguments {
+  const HotelDetailViewArguments({
+    this.key,
+    required this.name,
+    required this.imageUrl,
+    required this.description,
+    required this.location,
+    required this.price,
+    required this.averageRating,
+    required this.numberOfReviews,
+  });
+
+  final _i19.Key? key;
+
+  final String name;
+
+  final String imageUrl;
+
+  final String description;
+
+  final String location;
+
+  final double price;
+
+  final double averageRating;
+
+  final int numberOfReviews;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "name": "$name", "imageUrl": "$imageUrl", "description": "$description", "location": "$location", "price": "$price", "averageRating": "$averageRating", "numberOfReviews": "$numberOfReviews"}';
+  }
+
+  @override
+  bool operator ==(covariant HotelDetailViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key &&
+        other.name == name &&
+        other.imageUrl == imageUrl &&
+        other.description == description &&
+        other.location == location &&
+        other.price == price &&
+        other.averageRating == averageRating &&
+        other.numberOfReviews == numberOfReviews;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^
+        name.hashCode ^
+        imageUrl.hashCode ^
+        description.hashCode ^
+        location.hashCode ^
+        price.hashCode ^
+        averageRating.hashCode ^
+        numberOfReviews.hashCode;
+  }
+}
+
+extension NavigatorStateExtension on _i20.NavigationService {
   Future<dynamic> navigateToOnboardingView([
     int? routerId,
     bool preventDuplicates = true,
@@ -334,7 +416,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToAuthView({
-    _i18.Key? key,
+    _i19.Key? key,
     required bool isSignIn,
     int? routerId,
     bool preventDuplicates = true,
@@ -533,9 +615,9 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToLanguageView({
-    _i18.Key? key,
-    required _i19.SheetRequest<dynamic> request,
-    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
+    _i19.Key? key,
+    required _i20.SheetRequest<dynamic> request,
+    required dynamic Function(_i20.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -545,6 +627,37 @@ extension NavigatorStateExtension on _i19.NavigationService {
     return navigateTo<dynamic>(Routes.languageView,
         arguments: LanguageViewArguments(
             key: key, request: request, completer: completer),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToHotelDetailView({
+    _i19.Key? key,
+    required String name,
+    required String imageUrl,
+    required String description,
+    required String location,
+    required double price,
+    required double averageRating,
+    required int numberOfReviews,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.hotelDetailView,
+        arguments: HotelDetailViewArguments(
+            key: key,
+            name: name,
+            imageUrl: imageUrl,
+            description: description,
+            location: location,
+            price: price,
+            averageRating: averageRating,
+            numberOfReviews: numberOfReviews),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -566,7 +679,7 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithAuthView({
-    _i18.Key? key,
+    _i19.Key? key,
     required bool isSignIn,
     int? routerId,
     bool preventDuplicates = true,
@@ -765,9 +878,9 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithLanguageView({
-    _i18.Key? key,
-    required _i19.SheetRequest<dynamic> request,
-    required dynamic Function(_i19.SheetResponse<dynamic>) completer,
+    _i19.Key? key,
+    required _i20.SheetRequest<dynamic> request,
+    required dynamic Function(_i20.SheetResponse<dynamic>) completer,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -777,6 +890,37 @@ extension NavigatorStateExtension on _i19.NavigationService {
     return replaceWith<dynamic>(Routes.languageView,
         arguments: LanguageViewArguments(
             key: key, request: request, completer: completer),
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithHotelDetailView({
+    _i19.Key? key,
+    required String name,
+    required String imageUrl,
+    required String description,
+    required String location,
+    required double price,
+    required double averageRating,
+    required int numberOfReviews,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.hotelDetailView,
+        arguments: HotelDetailViewArguments(
+            key: key,
+            name: name,
+            imageUrl: imageUrl,
+            description: description,
+            location: location,
+            price: price,
+            averageRating: averageRating,
+            numberOfReviews: numberOfReviews),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
