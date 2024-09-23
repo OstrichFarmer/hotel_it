@@ -24,6 +24,7 @@ class TAndCView extends StatelessWidget {
                 "Terms and Condition",
                 style: w600Style(17, Theme.of(context).colorScheme.onSurface),
               ),
+              centerTitle: true,
             ),
             body: Padding(
               padding: EdgeInsets.only(left: 20.w, right: 20.w),
