@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/schedule_view/schedule_viewmodel.dart';
+import 'package:hotel_it/widgets/number_dropdown.dart';
 import 'package:stacked/stacked.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
@@ -71,6 +72,50 @@ class ScheduleView extends StatelessWidget {
                       selectionMode: DateRangePickerSelectionMode.range,
                     ),
                   ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Rooms",
+                        style: GoogleFonts.plusJakartaSans(),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      NumberDropdown(
+                          selectedNumber: model.selectedRoom,
+                          onChanged: (value) => model.setSelectedRoom),
+                      SizedBox(
+                        width: 15.w,
+                      ),
+                      Text(
+                        "Adults",
+                        style: GoogleFonts.plusJakartaSans(),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      NumberDropdown(
+                          selectedNumber: model.selectedRoom,
+                          onChanged: (value) =>
+                              model.setSelectedNumberOfAdults),
+                      SizedBox(
+                        width: 15.w,
+                      ),
+                      Text(
+                        "Children",
+                        style: GoogleFonts.plusJakartaSans(),
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                      NumberDropdown(
+                          selectedNumber: model.selectedRoom,
+                          onChanged: (value) => model.selectedNumberOfChildren),
+                    ],
+                  )
                 ],
               ),
             ));
