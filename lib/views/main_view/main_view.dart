@@ -148,7 +148,7 @@ class MainView extends StatelessWidget {
                   ),
                   ListTile(
                     leading: const Icon(Icons.notifications),
-                    title: const Text('Notifications'),
+                    title: const Text('Schedule'),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () {
                       model.setIndex(2);
