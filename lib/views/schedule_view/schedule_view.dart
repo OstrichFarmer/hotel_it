@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/schedule_view/schedule_viewmodel.dart';
+import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/number_dropdown.dart';
+import 'package:hotel_it/widgets/recent_vacation_card.dart';
+import 'package:hotel_it/widgets/recent_vacation_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
@@ -115,7 +118,35 @@ class ScheduleView extends StatelessWidget {
                           selectedNumber: model.selectedRoom,
                           onChanged: (value) => model.selectedNumberOfChildren),
                     ],
-                  )
+                  ),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "My Schedule",
+                        style: GoogleFonts.plusJakartaSans(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17.sp,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  const RecentVacationViewCard(
+                      hotelName: "Protea Hotel",
+                      location: "Victoria Island",
+                      image: "assets/images/hotel6.png",
+                      checkInDate: "10 Sept",
+                      checkOutDate: "15 Sept",
+                      year: "2024"),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(title: "Check Availability", onpressed: () {})
                 ],
               ),
             ));
