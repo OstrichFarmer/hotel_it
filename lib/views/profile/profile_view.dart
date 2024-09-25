@@ -19,8 +19,9 @@ class ProfileView extends StatelessWidget {
         Widget? child,
       ) {
         return Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.primary,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             title: Text(
               "Profile",
               style: w600Style(17, Theme.of(context).colorScheme.onSurface),
