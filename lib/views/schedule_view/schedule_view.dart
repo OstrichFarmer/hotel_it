@@ -5,7 +5,6 @@ import 'package:hotel_it/services/network/constant.dart';
 import 'package:hotel_it/views/schedule_view/schedule_viewmodel.dart';
 import 'package:hotel_it/widgets/custom_button.dart';
 import 'package:hotel_it/widgets/number_dropdown.dart';
-import 'package:hotel_it/widgets/recent_vacation_card.dart';
 import 'package:hotel_it/widgets/recent_vacation_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
